@@ -12,8 +12,8 @@ Applied AI Analyst Internship, inGen Dynamics (Futurenauts Internship Program). 
 | [`W01_Data_Landscape.docx`](W01_Data_Landscape.docx): text sources per platform, who writes them, decisions supported, privacy constraints, scope | Done (v1) |
 | [`W01_Taxonomy_Guide.docx`](W01_Taxonomy_Guide.docx): 14 incident categories in 4 groups + NO_INCIDENT, decision rules, examples, borderline rulings, severity scale (1–4), root-cause flag, benchmark notes | Done (v1) |
 | [`weekly/Wk-01-Log.md`](weekly/Wk-01-Log.md): the hardest category boundary (AI Detection Error vs Sensors) | Done |
-| `data/`: synthetic field-report corpus with planted patterns, public text sample, sealed answer key | In progress |
-| `eval/gold_set.csv`: 250 hand-labelled reports, tuning/held-out split, Cohen's kappa | In progress |
+| [`data/`](data/): 2,000 synthetic Aido Rover and Fari reports with telemetry and four planted patterns; sealed answer key ([generator](src/generate_corpus.py)) | Done (public review sample to add) |
+| [`eval/gold_set.csv`](eval/gold_set.csv): 250 reports (150 tuning / 100 held-out, 50 double-labelled), sampled by [`src/sample_gold_set.py`](src/sample_gold_set.py) | Sampled, hand-labelling in progress |
 
 ### Key taxonomy decisions
 1. Classify by **where the robot failed**, not by the trigger; the trigger is recorded in the root-cause flag.
@@ -25,8 +25,9 @@ Applied AI Analyst Internship, inGen Dynamics (Futurenauts Internship Program). 
 ```
 ├── W01_Data_Landscape.docx
 ├── W01_Taxonomy_Guide.docx
-├── data/        # synthetic corpus (Week 1, in progress)
-├── eval/        # gold evaluation set (Week 1, in progress)
+├── src/         # corpus generator and gold-set sampler
+├── data/        # synthetic corpus; sealed/ holds the answer key (Week 3)
+├── eval/        # gold evaluation set
 └── weekly/      # weekly logs
 ```
 
