@@ -16,17 +16,27 @@ Usage
   python src/classify_llm.py --input data/field_reports.csv --save-corpus --prompt <final>
       # full corpus with the final prompt -> data/classified_corpus.csv
 
-Requires ANTHROPIC_API_KEY (never committed).
+Backends
+  --backend api         Anthropic API via the SDK; requires ANTHROPIC_API_KEY (never committed)
+  --backend claude-cli  Claude Code in print mode (`claude -p`), using the logged-in Claude
+                        subscription. Each call runs in an empty working directory with all
+                        tools disabled and no saved session, so the model sees only the
+                        prompt and one report.
 """
 
 import argparse
 import csv
 import json
+import subprocess
+import tempfile
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-import anthropic
+try:
+    import anthropic
+except ImportError:  # only needed for --backend api
+    anthropic = None
 
 ROOT = Path(__file__).resolve().parent.parent
 CATEGORIES = ["H1", "H2", "H3", "H4", "S1", "S2", "S3", "S4", "S5",
@@ -97,12 +107,50 @@ def classify(client, model, system_prompt, report):
     return (None if error else out), error, usage
 
 
+class CliUsage:
+    """Token usage from a `claude -p --output-format json` result."""
+    def __init__(self, u):
+        self.input_tokens = u.get("input_tokens", 0)
+        self.output_tokens = u.get("output_tokens", 0)
+        self.cache_read_input_tokens = u.get("cache_read_input_tokens", 0)
+        self.cache_creation_input_tokens = u.get("cache_creation_input_tokens", 0)
+
+
+CLI_ALIASES = {"claude-opus-5-5": "opus", "claude-sonnet-5-5": "sonnet", "claude-haiku-5-5": "haiku"}
+
+
+def classify_cli(model, system_prompt, report, workdir):
+    """One `claude -p` call. Returns (parsed dict or None, error, usage, cost_usd)."""
+    proc = subprocess.run(
+        ["claude", "-p", f"Platform: {report['platform']}\nReport: {report['text']}",
+         "--system-prompt", system_prompt, "--json-schema", json.dumps(SCHEMA),
+         "--output-format", "json", "--tools", "", "--no-session-persistence",
+         "--model", CLI_ALIASES[model]],
+        capture_output=True, text=True, cwd=workdir, timeout=300)
+    try:
+        d = json.loads(proc.stdout)
+    except json.JSONDecodeError:
+        return None, f"cli output not JSON: {proc.stderr[:200]}", CliUsage({}), 0.0
+    usage, cost = CliUsage(d.get("usage") or {}), d.get("total_cost_usd") or 0.0
+    if d.get("is_error"):
+        return None, f"cli error: {str(d.get('result'))[:200]}", usage, cost
+    out = d.get("structured_output")
+    if out is None:
+        try:
+            out = json.loads(d.get("result", ""))
+        except json.JSONDecodeError:
+            return None, "invalid JSON", usage, cost
+    error = validate(out)
+    return (None if error else out), error, usage, cost
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--input", default="eval/gold_set.csv")
     ap.add_argument("--split", choices=["tuning", "heldout"], help="gold-set split to run")
     ap.add_argument("--prompt", default="classify_v1")
     ap.add_argument("--model", default="claude-opus-5-5", choices=sorted(PRICES))
+    ap.add_argument("--backend", choices=["api", "claude-cli"], default="api")
     ap.add_argument("--limit", type=int)
     ap.add_argument("--save-corpus", action="store_true",
                     help="also write data/classified_corpus.csv (reports + predictions)")
@@ -115,7 +163,9 @@ def main():
         rows = rows[:args.limit]
     system_prompt = (ROOT / "prompts" / f"{args.prompt}.md").read_text(encoding="utf-8")
 
-    client = anthropic.Anthropic()
+    client = anthropic.Anthropic() if args.backend == "api" else None
+    workdir = tempfile.mkdtemp(prefix="classify_")  # empty cwd for claude -p
+    cli_cost = 0.0
     totals = {"input_tokens": 0, "output_tokens": 0,
               "cache_read_input_tokens": 0, "cache_creation_input_tokens": 0}
     results, flagged = [], 0
@@ -123,6 +173,16 @@ def main():
     for i, report in enumerate(rows, 1):
         out, error = None, ""
         for _attempt in range(2):  # one retry on invalid output
+            if args.backend == "claude-cli":
+                out, error, usage, c = classify_cli(args.model, system_prompt, report, workdir)
+                cli_cost += c
+                if error.startswith("cli error: Failed to authenticate"):
+                    raise SystemExit("Claude Code is not logged in: run `claude`, then /login")
+                for k in totals:
+                    totals[k] += getattr(usage, k, 0) or 0
+                if out:
+                    break
+                continue
             try:
                 out, error, usage = classify(client, args.model, system_prompt, report)
             except anthropic.RateLimitError:
@@ -152,7 +212,7 @@ def main():
               f"{results[-1]['pred_category'] or 'FLAGGED: ' + error}")
 
     p_in, p_out = PRICES[args.model]
-    cost = (totals["input_tokens"] * p_in
+    cost = cli_cost if args.backend == "claude-cli" else (totals["input_tokens"] * p_in
             + totals["cache_read_input_tokens"] * p_in * 0.10
             + totals["cache_creation_input_tokens"] * p_in * 1.25
             + totals["output_tokens"] * p_out) / 1e6
@@ -165,7 +225,8 @@ def main():
         w.writeheader()
         w.writerows(results)
     log = {"run_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-           "model": args.model, "prompt_version": args.prompt, "input": args.input,
+           "model": args.model, "backend": args.backend,
+           "prompt_version": args.prompt, "input": args.input,
            "split": args.split, "n_reports": len(rows), "n_flagged": flagged,
            "tokens": totals, "estimated_cost_usd": round(cost, 4),
            "seconds": round(time.time() - started, 1)}
