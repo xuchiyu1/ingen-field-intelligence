@@ -1,0 +1,5 @@
+report_id,gold,pred,text,error_cause
+R01126,E1,NO_INCIDENT,"Heavy rain, unit R01 paused patrol per weather rule.",rule unclear
+R00940,U2,S5,Fari doesn't understand one resident's accent,rule unclear
+R01878,U2,S1,"Fari responds very slowly since last week, also drifted off route earlier.",multiple issues
+R00680,E1,NO_INCIDENT,"heavy rain, unit r11 paused patrol per weather rule.",rule unclear

@@ -31,7 +31,8 @@ Applied AI Analyst Internship, inGen Dynamics (Futurenauts Internship Program). 
 | [`src/make_eval_report.py`](src/make_eval_report.py): builds `W02_Evaluation_Report.docx` (held-out accuracy vs baselines, per-category results, kappa, human-review threshold, error causes, cost) | Built and tested on placeholder data |
 | [`prompts/CHANGELOG.md`](prompts/CHANGELOG.md): prompt versions and their tuning-split effect | Started |
 | [`weekly/Wk-02-Log.md`](weekly/Wk-02-Log.md) | Done |
-| `W02_Evaluation_Report.docx`, `data/classified_corpus.csv`: measured results | Pending gold-set labelling |
+| [`W02_Evaluation_Report.docx`](W02_Evaluation_Report.docx): held-out accuracy **LLM 96.0%** vs keyword 94.0% vs TF-IDF 78.0%, per-category results, human-review threshold, error causes | Done |
+| `data/classified_corpus.csv`: full corpus classified with the final prompt | Running |
 
 **Week 2 run order** (once the gold set is labelled):
 1. `python src/evaluate.py --agreement`: Cohen's kappa; fix any rule with kappa below 0.6

@@ -116,6 +116,7 @@ class CliUsage:
         self.cache_creation_input_tokens = u.get("cache_creation_input_tokens", 0)
 
 
+MODELS_SEEN = set()  # actual model IDs reported by claude -p
 CLI_ALIASES = {"claude-opus-5-5": "opus", "claude-sonnet-5-5": "sonnet", "claude-haiku-5-5": "haiku"}
 
 
@@ -132,6 +133,7 @@ def classify_cli(model, system_prompt, report, workdir):
     except json.JSONDecodeError:
         return None, f"cli output not JSON: {proc.stderr[:200]}", CliUsage({}), 0.0
     usage, cost = CliUsage(d.get("usage") or {}), d.get("total_cost_usd") or 0.0
+    MODELS_SEEN.update((d.get("modelUsage") or {}).keys())
     if d.get("is_error"):
         return None, f"cli error: {str(d.get('result'))[:200]}", usage, cost
     out = d.get("structured_output")
@@ -144,6 +146,46 @@ def classify_cli(model, system_prompt, report, workdir):
     return (None if error else out), error, usage, cost
 
 
+BATCH_SCHEMA = {
+    "type": "object",
+    "properties": {"results": {"type": "array", "items": {
+        "type": "object",
+        "properties": {"report_id": {"type": "string"}, **SCHEMA["properties"]},
+        "required": ["report_id"] + SCHEMA["required"],
+        "additionalProperties": False}}},
+    "required": ["results"],
+    "additionalProperties": False,
+}
+
+
+def classify_cli_batch(model, system_prompt, reports, workdir):
+    """Classify several reports in one `claude -p` call (cheaper for the full corpus).
+    Returns ({report_id: parsed dict}, error, usage, cost_usd)."""
+    body = "\n\n".join(f"report_id: {r['report_id']}\nPlatform: {r['platform']}\nReport: {r['text']}"
+                        for r in reports)
+    prompt = (f"Classify each of the {len(reports)} reports below independently. "
+              f"Return one result per report_id.\n\n{body}")
+    proc = subprocess.run(
+        ["claude", "-p", prompt, "--system-prompt", system_prompt,
+         "--json-schema", json.dumps(BATCH_SCHEMA), "--output-format", "json",
+         "--tools", "", "--no-session-persistence", "--model", CLI_ALIASES[model]],
+        capture_output=True, text=True, cwd=workdir, timeout=900)
+    try:
+        d = json.loads(proc.stdout)
+    except json.JSONDecodeError:
+        return {}, f"cli output not JSON: {proc.stderr[:200]}", CliUsage({}), 0.0
+    usage, cost = CliUsage(d.get("usage") or {}), d.get("total_cost_usd") or 0.0
+    MODELS_SEEN.update((d.get("modelUsage") or {}).keys())
+    if d.get("is_error"):
+        return {}, f"cli error: {str(d.get('result'))[:200]}", usage, cost
+    out = {}
+    for item in (d.get("structured_output") or {}).get("results", []):
+        rid = item.pop("report_id", None)
+        if rid and not validate(item):
+            out[rid] = item
+    return out, "", usage, cost
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--input", default="eval/gold_set.csv")
@@ -152,6 +194,8 @@ def main():
     ap.add_argument("--model", default="claude-opus-5-5", choices=sorted(PRICES))
     ap.add_argument("--backend", choices=["api", "claude-cli"], default="api")
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--batch-size", type=int, default=1,
+                    help="claude-cli only: reports per call (use for the full corpus)")
     ap.add_argument("--save-corpus", action="store_true",
                     help="also write data/classified_corpus.csv (reports + predictions)")
     args = ap.parse_args()
@@ -170,7 +214,39 @@ def main():
               "cache_read_input_tokens": 0, "cache_creation_input_tokens": 0}
     results, flagged = [], 0
     started = time.time()
-    for i, report in enumerate(rows, 1):
+    if args.backend == "claude-cli" and args.batch_size > 1:
+        for start in range(0, len(rows), args.batch_size):
+            chunk = rows[start:start + args.batch_size]
+            got, error, usage, c = classify_cli_batch(args.model, system_prompt, chunk, workdir)
+            if error.startswith("cli error: Failed to authenticate"):
+                raise SystemExit("Claude Code is not logged in: run `claude`, then /login")
+            cli_cost += c
+            for k in totals:
+                totals[k] += getattr(usage, k, 0) or 0
+            for report in chunk:   # anything missing from the batch is retried alone
+                out = got.get(report["report_id"])
+                err = error or "missing from batch"
+                if not out:
+                    out, err, usage, c = classify_cli(args.model, system_prompt, report, workdir)
+                    cli_cost += c
+                    for k in totals:
+                        totals[k] += getattr(usage, k, 0) or 0
+                flagged += not out
+                results.append({
+                    "report_id": report["report_id"],
+                    "pred_category": out["category"] if out else "",
+                    "pred_severity": out["severity"] if out else "",
+                    "pred_root_cause_stated": out["root_cause_stated"] if out else "",
+                    "confidence": out["confidence"] if out else "",
+                    "reason": out["reason"] if out else "",
+                    "flag": "" if out else err,
+                })
+            print(f"[{min(start + args.batch_size, len(rows))}/{len(rows)}] batch done, "
+                  f"{flagged} flagged so far", flush=True)
+        rows_iter = []
+    else:
+        rows_iter = rows
+    for i, report in enumerate(rows_iter, 1):
         out, error = None, ""
         for _attempt in range(2):  # one retry on invalid output
             if args.backend == "claude-cli":
@@ -217,7 +293,8 @@ def main():
             + totals["cache_creation_input_tokens"] * p_in * 1.25
             + totals["output_tokens"] * p_out) / 1e6
 
-    tag = Path(args.input).stem + (f"_{args.split}" if args.split else "")
+    tag = (Path(args.input).stem + (f"_{args.split}" if args.split else "")
+           + (f"_batch{args.batch_size}" if args.batch_size > 1 else ""))
     out_dir = ROOT / "results"
     out_dir.mkdir(exist_ok=True)
     with open(out_dir / f"llm_{args.prompt}_{tag}.csv", "w", newline="", encoding="utf-8") as f:
@@ -225,10 +302,14 @@ def main():
         w.writeheader()
         w.writerows(results)
     log = {"run_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-           "model": args.model, "backend": args.backend,
+           "model": args.model if args.backend == "api" else ", ".join(sorted(MODELS_SEEN)),
+           "backend": args.backend,
            "prompt_version": args.prompt, "input": args.input,
-           "split": args.split, "n_reports": len(rows), "n_flagged": flagged,
+           "split": args.split, "batch_size": args.batch_size,
+           "n_reports": len(rows), "n_flagged": flagged,
            "tokens": totals, "estimated_cost_usd": round(cost, 4),
+           "cost_note": ("API list price" if args.backend == "api" else
+                         "claude -p equivalent cost; billed to the Claude subscription, not charged"),
            "seconds": round(time.time() - started, 1)}
     (out_dir / f"llm_{args.prompt}_{tag}.json").write_text(json.dumps(log, indent=2))
 

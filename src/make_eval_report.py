@@ -154,6 +154,13 @@ def main():
     ]:
         doc.add_paragraph(line, style="List Bullet")
 
+    notes = RESULTS / "report_notes.md"   # hand-written findings, one bullet per line
+    if notes.exists():
+        doc.add_heading("8. Findings and notes", 1)
+        for line in notes.read_text(encoding="utf-8").splitlines():
+            if line.startswith("- "):
+                doc.add_paragraph(line[2:], style="List Bullet")
+
     out = ROOT / "W02_Evaluation_Report.docx"
     doc.save(out)
     print(f"wrote {out.relative_to(ROOT)}")
