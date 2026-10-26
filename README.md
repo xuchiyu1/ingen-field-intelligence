@@ -28,11 +28,22 @@ Applied AI Analyst Internship, inGen Dynamics (Futurenauts Internship Program). 
 | [`src/classify_llm.py`](src/classify_llm.py) + [`prompts/classify_v1.md`](prompts/classify_v1.md): LLM classifier with schema-validated JSON output, retry/flagging, versioned prompt, token and cost logging | Built |
 | [`src/baseline.py`](src/baseline.py): keyword-rule baseline and TF-IDF + logistic regression baseline | Built; keyword baseline run on held-out split |
 | [`src/evaluate.py`](src/evaluate.py): accuracy, per-category precision/recall, confusion matrix, severity agreement, Cohen's kappa, error file | Built and tested on placeholder labels |
+| [`src/make_eval_report.py`](src/make_eval_report.py): builds `W02_Evaluation_Report.docx` (held-out accuracy vs baselines, per-category results, kappa, human-review threshold, error causes, cost) | Built and tested on placeholder data |
+| [`prompts/CHANGELOG.md`](prompts/CHANGELOG.md): prompt versions and their tuning-split effect | Started |
 | [`weekly/Wk-02-Log.md`](weekly/Wk-02-Log.md) | Done |
-| Measured accuracy on held-out gold set + error analysis | Pending gold-set labelling |
+| `W02_Evaluation_Report.docx`, `data/classified_corpus.csv`: measured results | Pending gold-set labelling |
+
+**Week 2 run order** (once the gold set is labelled):
+1. `python src/evaluate.py --agreement`: Cohen's kappa; fix any rule with kappa below 0.6
+2. `python src/baseline.py --method keyword --split heldout` and `python src/baseline.py --method tfidf`
+3. `python src/classify_llm.py --input eval/gold_set.csv --split tuning`, then iterate prompts on tuning only (log in `prompts/CHANGELOG.md`)
+4. `python src/classify_llm.py --input eval/gold_set.csv --split heldout --prompt <final>`, run **once**
+5. `python src/evaluate.py results/llm_<final>_gold_set_heldout.csv --split heldout`, then fill `error_cause` in the errors file
+6. `python src/make_eval_report.py --prompt <final>`
+7. `python src/classify_llm.py --input data/field_reports.csv --save-corpus --prompt <final>`
 
 ```bash
-pip install anthropic scikit-learn
+pip install anthropic scikit-learn python-docx
 export ANTHROPIC_API_KEY=...   # never committed
 python src/baseline.py --method keyword --split heldout
 python src/classify_llm.py --input eval/gold_set.csv --split tuning

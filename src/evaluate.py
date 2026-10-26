@@ -37,11 +37,24 @@ def agreement():
     if len(pairs) < 10:
         sys.exit(f"need round-2 labels on the double-label rows; found {len(pairs)}")
     a, b = zip(*pairs)
-    kappa = cohen_kappa_score(a, b)
-    disagreements = sorted({(x, y) for x, y in pairs if x != y})
-    print(json.dumps({"n": len(pairs), "cohen_kappa": round(kappa, 3),
-                      "raw_agreement": round(sum(x == y for x, y in pairs) / len(pairs), 3),
-                      "disagreement_pairs": disagreements}, indent=2))
+    # Per-category kappa (one-vs-rest): below 0.6 means the rule needs fixing.
+    per_cat = {}
+    for c in sorted(set(a) | set(b)):
+        x = [v == c for v in a]
+        y = [v == c for v in b]
+        if any(x) or any(y):
+            per_cat[c] = round(cohen_kappa_score(x, y), 3) if len(set(x + y)) > 1 else 1.0
+    sev = [(r["label_severity"].strip(), r["round2_severity"].strip())
+           for r in gold.values() if r["round2_severity"].strip() and r["label_severity"].strip()]
+    print(json.dumps({
+        "n": len(pairs),
+        "cohen_kappa": round(cohen_kappa_score(a, b), 3),
+        "raw_agreement": round(sum(x == y for x, y in pairs) / len(pairs), 3),
+        "per_category_kappa": per_cat,
+        "categories_below_0.6": [c for c, k in per_cat.items() if k < 0.6],
+        "severity_kappa": round(cohen_kappa_score(*zip(*sev)), 3) if len(sev) >= 10 else None,
+        "disagreement_pairs": sorted({(x, y) for x, y in pairs if x != y}),
+    }, indent=2))
 
 
 def score(pred_path, split):
@@ -73,6 +86,17 @@ def score(pred_path, split):
         within1 = sum(abs(int(a) - int(b)) <= 1 for a, b in sev) / len(sev)
         print(f"\nseverity: exact {exact:.3f}, within one level {within1:.3f} (n={len(sev)})")
 
+    conf = [(preds[i].get("confidence", ""), gold[i]["label_category"].strip() == preds[i]["pred_category"])
+            for i in ids if preds[i].get("confidence")]
+    if conf:
+        # Human-review threshold: does accuracy drop in the low-confidence band?
+        print("\naccuracy by confidence band (human-review threshold)")
+        for band in ("high", "medium", "low"):
+            hits = [ok for c, ok in conf if c == band]
+            if hits:
+                print(f"  {band:>6}: {sum(hits) / len(hits):.3f} on {len(hits)} reports "
+                      f"({len(hits) / len(conf):.0%} of outputs)")
+
     errors = [(i, gold[i]["label_category"].strip(), preds[i]["pred_category"])
               for i in ids if gold[i]["label_category"].strip() != preds[i]["pred_category"]]
     out = Path(pred_path).with_name(Path(pred_path).stem + "_errors.csv")
@@ -82,7 +106,7 @@ def score(pred_path, split):
         for i, g, p in errors:
             w.writerow([i, g, p, gold[i]["text"], ""])
     print(f"\n{len(errors)} errors written to {out.relative_to(ROOT)} "
-          "(fill error_cause: rule unclear / genuinely ambiguous / multiple issues / model misread)")
+          "(fill error_cause: rule unclear / genuinely ambiguous / multiple issues / model misreading / gold label wrong)")
 
 
 def main():

@@ -36,7 +36,7 @@ OTHER
 - NO_INCIDENT: routine note, designed behaviour or a safety rule working as intended (e.g. gas-detection stop, planned night speed reduction, end-of-shift docking).
 
 ## Severity (rate the impact actually reported; if not described, choose the lowest level the text supports)
-1 Minor: no task impact. 2 Moderate: task degraded or delayed, robot recovered on its own. 3 Major: task stopped, human intervention needed. 4 Critical: safety risk, damage, or outage longer than a shift.
+1 Minor: incident noted, robot continued its mission. 2 Moderate: mission interrupted, robot resumed on its own. 3 Serious: human intervention needed to resume. 4 Critical: robot out of service, needing maintenance or replacement, or a safety risk.
 
 ## Root cause stated
 true only if the report itself names why it happened (e.g. "because of the cold", "kids pushed it"). A guess does not count.

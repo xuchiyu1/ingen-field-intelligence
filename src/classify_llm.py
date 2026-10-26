@@ -13,6 +13,8 @@ Usage
   python src/classify_llm.py --input eval/gold_set.csv --split tuning
   python src/classify_llm.py --input eval/gold_set.csv --split heldout   # run ONCE, final prompt only
   python src/classify_llm.py --input data/field_reports.csv --limit 5   # smoke test
+  python src/classify_llm.py --input data/field_reports.csv --save-corpus --prompt <final>
+      # full corpus with the final prompt -> data/classified_corpus.csv
 
 Requires ANTHROPIC_API_KEY (never committed).
 """
@@ -64,6 +66,8 @@ def validate(out):
         return "root_cause_stated not boolean"
     if out["confidence"] not in ("high", "medium", "low"):
         return f"confidence {out['confidence']!r}"
+    if not out["reason"].strip():
+        return "empty reason"
     return ""
 
 
@@ -100,6 +104,8 @@ def main():
     ap.add_argument("--prompt", default="classify_v1")
     ap.add_argument("--model", default="claude-opus-5-5", choices=sorted(PRICES))
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--save-corpus", action="store_true",
+                    help="also write data/classified_corpus.csv (reports + predictions)")
     args = ap.parse_args()
 
     rows = list(csv.DictReader(open(ROOT / args.input, encoding="utf-8")))
@@ -164,6 +170,18 @@ def main():
            "tokens": totals, "estimated_cost_usd": round(cost, 4),
            "seconds": round(time.time() - started, 1)}
     (out_dir / f"llm_{args.prompt}_{tag}.json").write_text(json.dumps(log, indent=2))
+
+    if args.save_corpus:
+        by_id = {r["report_id"]: r for r in results}
+        corpus = [{**report, **{k: v for k, v in by_id[report["report_id"]].items()
+                                if k != "report_id"},
+                   "prompt_version": args.prompt, "model": args.model}
+                  for report in rows]
+        with open(ROOT / "data/classified_corpus.csv", "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=list(corpus[0]))
+            w.writeheader()
+            w.writerows(corpus)
+        print(f"wrote data/classified_corpus.csv ({len(corpus)} rows)")
     print(json.dumps(log, indent=2))
 
 
