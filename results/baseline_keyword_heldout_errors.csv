@@ -1,0 +1,7 @@
+report_id,gold,pred,text,error_cause
+R01932,U2,S3,"Fari keeps repeating the same joke, residents bored, lost connection briefly too.",
+R00932,S5,NO_INCIDENT,"Fari raised a fall aletr, resident was only bending to pick up a cup.",
+R01878,U2,S1,"Fari responds very slowly since last week, also drifted off route earlier.",
+R00330,U2,E1,"resident asked fari a question and waited ages for a reply, it was raining",
+R00867,S1,H1,"unit r07 went into cautious mode in east, position jumping on map, battery also low.",
+R01981,S4,H1,Mobile app shows wrong battery level for R04,
