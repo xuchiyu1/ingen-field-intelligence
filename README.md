@@ -21,11 +21,31 @@ Applied AI Analyst Internship, inGen Dynamics (Futurenauts Internship Program). 
 3. **NO_INCIDENT** covers designed behaviour and safety rules working as intended.
 4. Privacy and consent issues are handled as data governance (Data Landscape), not as robot incidents.
 
+## Week 2: LLM Classification Pipeline, Evaluation & Error Analysis
+
+| Deliverable | Status |
+|---|---|
+| [`src/classify_llm.py`](src/classify_llm.py) + [`prompts/classify_v1.md`](prompts/classify_v1.md): LLM classifier with schema-validated JSON output, retry/flagging, versioned prompt, token and cost logging | Built |
+| [`src/baseline.py`](src/baseline.py): keyword-rule baseline and TF-IDF + logistic regression baseline | Built; keyword baseline run on held-out split |
+| [`src/evaluate.py`](src/evaluate.py): accuracy, per-category precision/recall, confusion matrix, severity agreement, Cohen's kappa, error file | Built and tested on placeholder labels |
+| [`weekly/Wk-02-Log.md`](weekly/Wk-02-Log.md) | Done |
+| Measured accuracy on held-out gold set + error analysis | Pending gold-set labelling |
+
+```bash
+pip install anthropic scikit-learn
+export ANTHROPIC_API_KEY=...   # never committed
+python src/baseline.py --method keyword --split heldout
+python src/classify_llm.py --input eval/gold_set.csv --split tuning
+python src/evaluate.py results/llm_classify_v1_gold_set_tuning.csv --split tuning
+```
+
 ## Repository structure
 ```
 ├── W01_Data_Landscape.docx
 ├── W01_Taxonomy_Guide.docx
-├── src/         # corpus generator and gold-set sampler
+├── src/         # corpus generator, gold-set sampler, classifier, baselines, evaluation
+├── prompts/     # versioned classification prompts
+├── results/     # predictions, run logs, error files
 ├── data/        # synthetic corpus; sealed/ holds the answer key (Week 3)
 ├── eval/        # gold evaluation set
 └── weekly/      # weekly logs
