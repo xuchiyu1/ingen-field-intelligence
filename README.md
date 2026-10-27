@@ -32,7 +32,7 @@ Applied AI Analyst Internship, inGen Dynamics (Futurenauts Internship Program). 
 | [`prompts/CHANGELOG.md`](prompts/CHANGELOG.md): prompt versions and their tuning-split effect | Started |
 | [`weekly/Wk-02-Log.md`](weekly/Wk-02-Log.md) | Done |
 | [`W02_Evaluation_Report.docx`](W02_Evaluation_Report.docx): held-out accuracy **LLM 96.0%** vs keyword 94.0% vs TF-IDF 78.0%, per-category results, human-review threshold, error causes | Done |
-| `data/classified_corpus.csv`: full corpus classified with the final prompt | Running |
+| `data/classified_corpus.csv`: full corpus classified with the final prompt | Done (2,000 reports, 0 flagged) |
 
 **Week 2 run order** (once the gold set is labelled):
 1. `python src/evaluate.py --agreement`: Cohen's kappa; fix any rule with kappa below 0.6

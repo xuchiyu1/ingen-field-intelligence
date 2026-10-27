@@ -1,0 +1,757 @@
+week_start,platform,site,zone,operating_hours
+2025-12-29,Aido Rover,Site_A,North,13.9
+2025-12-29,Aido Rover,Site_A,South,13.8
+2025-12-29,Aido Rover,Site_A,East,10.3
+2025-12-29,Aido Rover,Site_A,West,12.6
+2025-12-29,Aido Rover,Site_A,Dock,13.5
+2025-12-29,Aido Rover,Site_B,North,13.3
+2025-12-29,Aido Rover,Site_B,South,11.5
+2025-12-29,Aido Rover,Site_B,East,11.8
+2025-12-29,Aido Rover,Site_B,West,13.1
+2025-12-29,Aido Rover,Site_B,Dock,11.2
+2025-12-29,Aido Rover,Site_C,North,12.5
+2025-12-29,Aido Rover,Site_C,South,10.6
+2025-12-29,Aido Rover,Site_C,East,12.8
+2025-12-29,Aido Rover,Site_C,West,11.1
+2025-12-29,Aido Rover,Site_C,Dock,12.9
+2025-12-29,Aido Rover,Site_D,North,14.6
+2025-12-29,Aido Rover,Site_D,South,14.6
+2025-12-29,Aido Rover,Site_D,East,14.3
+2025-12-29,Aido Rover,Site_D,West,10.6
+2025-12-29,Aido Rover,Site_D,Dock,13.5
+2025-12-29,Aido Rover,Site_E,North,12.0
+2025-12-29,Aido Rover,Site_E,South,11.0
+2025-12-29,Aido Rover,Site_E,East,13.0
+2025-12-29,Aido Rover,Site_E,West,13.7
+2025-12-29,Aido Rover,Site_E,Dock,15.7
+2025-12-29,Fari,Area_1,,38.8
+2025-12-29,Fari,Area_2,,45.4
+2025-12-29,Fari,Area_3,,25.0
+2026-01-05,Aido Rover,Site_A,North,21.5
+2026-01-05,Aido Rover,Site_A,South,22.3
+2026-01-05,Aido Rover,Site_A,East,20.9
+2026-01-05,Aido Rover,Site_A,West,24.8
+2026-01-05,Aido Rover,Site_A,Dock,21.8
+2026-01-05,Aido Rover,Site_B,North,24.8
+2026-01-05,Aido Rover,Site_B,South,24.9
+2026-01-05,Aido Rover,Site_B,East,20.0
+2026-01-05,Aido Rover,Site_B,West,22.0
+2026-01-05,Aido Rover,Site_B,Dock,22.2
+2026-01-05,Aido Rover,Site_C,North,21.9
+2026-01-05,Aido Rover,Site_C,South,20.3
+2026-01-05,Aido Rover,Site_C,East,20.4
+2026-01-05,Aido Rover,Site_C,West,23.5
+2026-01-05,Aido Rover,Site_C,Dock,20.1
+2026-01-05,Aido Rover,Site_D,North,21.1
+2026-01-05,Aido Rover,Site_D,South,24.4
+2026-01-05,Aido Rover,Site_D,East,24.2
+2026-01-05,Aido Rover,Site_D,West,22.4
+2026-01-05,Aido Rover,Site_D,Dock,19.4
+2026-01-05,Aido Rover,Site_E,North,17.4
+2026-01-05,Aido Rover,Site_E,South,22.7
+2026-01-05,Aido Rover,Site_E,East,22.3
+2026-01-05,Aido Rover,Site_E,West,24.7
+2026-01-05,Aido Rover,Site_E,Dock,24.7
+2026-01-05,Fari,Area_1,,66.4
+2026-01-05,Fari,Area_2,,68.4
+2026-01-05,Fari,Area_3,,69.8
+2026-01-12,Aido Rover,Site_A,North,22.6
+2026-01-12,Aido Rover,Site_A,South,23.6
+2026-01-12,Aido Rover,Site_A,East,25.7
+2026-01-12,Aido Rover,Site_A,West,23.5
+2026-01-12,Aido Rover,Site_A,Dock,23.2
+2026-01-12,Aido Rover,Site_B,North,21.7
+2026-01-12,Aido Rover,Site_B,South,20.6
+2026-01-12,Aido Rover,Site_B,East,20.6
+2026-01-12,Aido Rover,Site_B,West,20.8
+2026-01-12,Aido Rover,Site_B,Dock,22.6
+2026-01-12,Aido Rover,Site_C,North,24.8
+2026-01-12,Aido Rover,Site_C,South,20.3
+2026-01-12,Aido Rover,Site_C,East,20.0
+2026-01-12,Aido Rover,Site_C,West,23.1
+2026-01-12,Aido Rover,Site_C,Dock,28.4
+2026-01-12,Aido Rover,Site_D,North,19.6
+2026-01-12,Aido Rover,Site_D,South,19.6
+2026-01-12,Aido Rover,Site_D,East,21.6
+2026-01-12,Aido Rover,Site_D,West,21.5
+2026-01-12,Aido Rover,Site_D,Dock,20.7
+2026-01-12,Aido Rover,Site_E,North,23.2
+2026-01-12,Aido Rover,Site_E,South,19.9
+2026-01-12,Aido Rover,Site_E,East,17.8
+2026-01-12,Aido Rover,Site_E,West,23.0
+2026-01-12,Aido Rover,Site_E,Dock,20.7
+2026-01-12,Fari,Area_1,,72.4
+2026-01-12,Fari,Area_2,,69.8
+2026-01-12,Fari,Area_3,,71.8
+2026-01-19,Aido Rover,Site_A,North,20.7
+2026-01-19,Aido Rover,Site_A,South,19.9
+2026-01-19,Aido Rover,Site_A,East,19.8
+2026-01-19,Aido Rover,Site_A,West,23.1
+2026-01-19,Aido Rover,Site_A,Dock,17.4
+2026-01-19,Aido Rover,Site_B,North,22.7
+2026-01-19,Aido Rover,Site_B,South,22.2
+2026-01-19,Aido Rover,Site_B,East,25.0
+2026-01-19,Aido Rover,Site_B,West,18.2
+2026-01-19,Aido Rover,Site_B,Dock,22.1
+2026-01-19,Aido Rover,Site_C,North,23.4
+2026-01-19,Aido Rover,Site_C,South,19.7
+2026-01-19,Aido Rover,Site_C,East,25.9
+2026-01-19,Aido Rover,Site_C,West,20.1
+2026-01-19,Aido Rover,Site_C,Dock,20.4
+2026-01-19,Aido Rover,Site_D,North,27.0
+2026-01-19,Aido Rover,Site_D,South,25.2
+2026-01-19,Aido Rover,Site_D,East,24.4
+2026-01-19,Aido Rover,Site_D,West,23.0
+2026-01-19,Aido Rover,Site_D,Dock,19.8
+2026-01-19,Aido Rover,Site_E,North,16.8
+2026-01-19,Aido Rover,Site_E,South,24.1
+2026-01-19,Aido Rover,Site_E,East,26.6
+2026-01-19,Aido Rover,Site_E,West,21.5
+2026-01-19,Aido Rover,Site_E,Dock,21.6
+2026-01-19,Fari,Area_1,,70.3
+2026-01-19,Fari,Area_2,,69.2
+2026-01-19,Fari,Area_3,,78.2
+2026-01-26,Aido Rover,Site_A,North,25.5
+2026-01-26,Aido Rover,Site_A,South,24.5
+2026-01-26,Aido Rover,Site_A,East,20.3
+2026-01-26,Aido Rover,Site_A,West,23.7
+2026-01-26,Aido Rover,Site_A,Dock,22.4
+2026-01-26,Aido Rover,Site_B,North,22.4
+2026-01-26,Aido Rover,Site_B,South,17.9
+2026-01-26,Aido Rover,Site_B,East,19.9
+2026-01-26,Aido Rover,Site_B,West,25.9
+2026-01-26,Aido Rover,Site_B,Dock,24.4
+2026-01-26,Aido Rover,Site_C,North,22.4
+2026-01-26,Aido Rover,Site_C,South,25.5
+2026-01-26,Aido Rover,Site_C,East,22.5
+2026-01-26,Aido Rover,Site_C,West,16.8
+2026-01-26,Aido Rover,Site_C,Dock,20.8
+2026-01-26,Aido Rover,Site_D,North,19.6
+2026-01-26,Aido Rover,Site_D,South,23.5
+2026-01-26,Aido Rover,Site_D,East,24.0
+2026-01-26,Aido Rover,Site_D,West,19.1
+2026-01-26,Aido Rover,Site_D,Dock,20.5
+2026-01-26,Aido Rover,Site_E,North,24.9
+2026-01-26,Aido Rover,Site_E,South,21.6
+2026-01-26,Aido Rover,Site_E,East,22.2
+2026-01-26,Aido Rover,Site_E,West,21.2
+2026-01-26,Aido Rover,Site_E,Dock,22.9
+2026-01-26,Fari,Area_1,,79.2
+2026-01-26,Fari,Area_2,,83.8
+2026-01-26,Fari,Area_3,,66.3
+2026-02-02,Aido Rover,Site_A,North,21.5
+2026-02-02,Aido Rover,Site_A,South,22.4
+2026-02-02,Aido Rover,Site_A,East,19.8
+2026-02-02,Aido Rover,Site_A,West,17.8
+2026-02-02,Aido Rover,Site_A,Dock,23.4
+2026-02-02,Aido Rover,Site_B,North,17.5
+2026-02-02,Aido Rover,Site_B,South,21.6
+2026-02-02,Aido Rover,Site_B,East,24.6
+2026-02-02,Aido Rover,Site_B,West,23.4
+2026-02-02,Aido Rover,Site_B,Dock,19.9
+2026-02-02,Aido Rover,Site_C,North,22.5
+2026-02-02,Aido Rover,Site_C,South,22.8
+2026-02-02,Aido Rover,Site_C,East,26.1
+2026-02-02,Aido Rover,Site_C,West,25.3
+2026-02-02,Aido Rover,Site_C,Dock,24.4
+2026-02-02,Aido Rover,Site_D,North,23.1
+2026-02-02,Aido Rover,Site_D,South,20.1
+2026-02-02,Aido Rover,Site_D,East,25.5
+2026-02-02,Aido Rover,Site_D,West,25.0
+2026-02-02,Aido Rover,Site_D,Dock,22.8
+2026-02-02,Aido Rover,Site_E,North,21.5
+2026-02-02,Aido Rover,Site_E,South,24.1
+2026-02-02,Aido Rover,Site_E,East,21.9
+2026-02-02,Aido Rover,Site_E,West,23.4
+2026-02-02,Aido Rover,Site_E,Dock,25.2
+2026-02-02,Fari,Area_1,,67.1
+2026-02-02,Fari,Area_2,,71.4
+2026-02-02,Fari,Area_3,,66.2
+2026-02-09,Aido Rover,Site_A,North,20.0
+2026-02-09,Aido Rover,Site_A,South,22.1
+2026-02-09,Aido Rover,Site_A,East,20.8
+2026-02-09,Aido Rover,Site_A,West,25.0
+2026-02-09,Aido Rover,Site_A,Dock,22.0
+2026-02-09,Aido Rover,Site_B,North,21.6
+2026-02-09,Aido Rover,Site_B,South,21.2
+2026-02-09,Aido Rover,Site_B,East,23.3
+2026-02-09,Aido Rover,Site_B,West,23.0
+2026-02-09,Aido Rover,Site_B,Dock,22.1
+2026-02-09,Aido Rover,Site_C,North,18.3
+2026-02-09,Aido Rover,Site_C,South,21.2
+2026-02-09,Aido Rover,Site_C,East,18.8
+2026-02-09,Aido Rover,Site_C,West,23.5
+2026-02-09,Aido Rover,Site_C,Dock,23.7
+2026-02-09,Aido Rover,Site_D,North,25.7
+2026-02-09,Aido Rover,Site_D,South,23.2
+2026-02-09,Aido Rover,Site_D,East,21.6
+2026-02-09,Aido Rover,Site_D,West,18.5
+2026-02-09,Aido Rover,Site_D,Dock,21.7
+2026-02-09,Aido Rover,Site_E,North,16.8
+2026-02-09,Aido Rover,Site_E,South,21.8
+2026-02-09,Aido Rover,Site_E,East,24.7
+2026-02-09,Aido Rover,Site_E,West,26.1
+2026-02-09,Aido Rover,Site_E,Dock,20.6
+2026-02-09,Fari,Area_1,,74.7
+2026-02-09,Fari,Area_2,,67.6
+2026-02-09,Fari,Area_3,,71.5
+2026-02-16,Aido Rover,Site_A,North,21.7
+2026-02-16,Aido Rover,Site_A,South,24.3
+2026-02-16,Aido Rover,Site_A,East,22.2
+2026-02-16,Aido Rover,Site_A,West,25.0
+2026-02-16,Aido Rover,Site_A,Dock,22.8
+2026-02-16,Aido Rover,Site_B,North,20.1
+2026-02-16,Aido Rover,Site_B,South,20.5
+2026-02-16,Aido Rover,Site_B,East,22.8
+2026-02-16,Aido Rover,Site_B,West,21.3
+2026-02-16,Aido Rover,Site_B,Dock,22.5
+2026-02-16,Aido Rover,Site_C,North,23.6
+2026-02-16,Aido Rover,Site_C,South,18.6
+2026-02-16,Aido Rover,Site_C,East,24.2
+2026-02-16,Aido Rover,Site_C,West,18.4
+2026-02-16,Aido Rover,Site_C,Dock,23.0
+2026-02-16,Aido Rover,Site_D,North,27.9
+2026-02-16,Aido Rover,Site_D,South,24.7
+2026-02-16,Aido Rover,Site_D,East,20.2
+2026-02-16,Aido Rover,Site_D,West,19.1
+2026-02-16,Aido Rover,Site_D,Dock,24.5
+2026-02-16,Aido Rover,Site_E,North,24.4
+2026-02-16,Aido Rover,Site_E,South,19.7
+2026-02-16,Aido Rover,Site_E,East,24.4
+2026-02-16,Aido Rover,Site_E,West,21.9
+2026-02-16,Aido Rover,Site_E,Dock,24.0
+2026-02-16,Fari,Area_1,,77.5
+2026-02-16,Fari,Area_2,,62.2
+2026-02-16,Fari,Area_3,,66.2
+2026-02-23,Aido Rover,Site_A,North,25.1
+2026-02-23,Aido Rover,Site_A,South,24.7
+2026-02-23,Aido Rover,Site_A,East,19.7
+2026-02-23,Aido Rover,Site_A,West,21.4
+2026-02-23,Aido Rover,Site_A,Dock,22.8
+2026-02-23,Aido Rover,Site_B,North,24.2
+2026-02-23,Aido Rover,Site_B,South,22.1
+2026-02-23,Aido Rover,Site_B,East,25.2
+2026-02-23,Aido Rover,Site_B,West,23.8
+2026-02-23,Aido Rover,Site_B,Dock,23.4
+2026-02-23,Aido Rover,Site_C,North,23.7
+2026-02-23,Aido Rover,Site_C,South,22.0
+2026-02-23,Aido Rover,Site_C,East,20.9
+2026-02-23,Aido Rover,Site_C,West,18.9
+2026-02-23,Aido Rover,Site_C,Dock,22.2
+2026-02-23,Aido Rover,Site_D,North,21.0
+2026-02-23,Aido Rover,Site_D,South,20.6
+2026-02-23,Aido Rover,Site_D,East,20.5
+2026-02-23,Aido Rover,Site_D,West,21.7
+2026-02-23,Aido Rover,Site_D,Dock,26.6
+2026-02-23,Aido Rover,Site_E,North,21.9
+2026-02-23,Aido Rover,Site_E,South,24.3
+2026-02-23,Aido Rover,Site_E,East,22.3
+2026-02-23,Aido Rover,Site_E,West,23.2
+2026-02-23,Aido Rover,Site_E,Dock,18.3
+2026-02-23,Fari,Area_1,,77.9
+2026-02-23,Fari,Area_2,,71.2
+2026-02-23,Fari,Area_3,,62.9
+2026-03-02,Aido Rover,Site_A,North,23.4
+2026-03-02,Aido Rover,Site_A,South,22.5
+2026-03-02,Aido Rover,Site_A,East,23.5
+2026-03-02,Aido Rover,Site_A,West,22.6
+2026-03-02,Aido Rover,Site_A,Dock,21.2
+2026-03-02,Aido Rover,Site_B,North,19.7
+2026-03-02,Aido Rover,Site_B,South,24.3
+2026-03-02,Aido Rover,Site_B,East,21.6
+2026-03-02,Aido Rover,Site_B,West,23.0
+2026-03-02,Aido Rover,Site_B,Dock,19.4
+2026-03-02,Aido Rover,Site_C,North,20.7
+2026-03-02,Aido Rover,Site_C,South,19.8
+2026-03-02,Aido Rover,Site_C,East,24.1
+2026-03-02,Aido Rover,Site_C,West,21.5
+2026-03-02,Aido Rover,Site_C,Dock,22.9
+2026-03-02,Aido Rover,Site_D,North,24.8
+2026-03-02,Aido Rover,Site_D,South,27.0
+2026-03-02,Aido Rover,Site_D,East,21.8
+2026-03-02,Aido Rover,Site_D,West,20.7
+2026-03-02,Aido Rover,Site_D,Dock,18.3
+2026-03-02,Aido Rover,Site_E,North,20.3
+2026-03-02,Aido Rover,Site_E,South,17.8
+2026-03-02,Aido Rover,Site_E,East,18.2
+2026-03-02,Aido Rover,Site_E,West,25.9
+2026-03-02,Aido Rover,Site_E,Dock,20.1
+2026-03-02,Fari,Area_1,,79.0
+2026-03-02,Fari,Area_2,,68.6
+2026-03-02,Fari,Area_3,,70.6
+2026-03-09,Aido Rover,Site_A,North,21.8
+2026-03-09,Aido Rover,Site_A,South,20.7
+2026-03-09,Aido Rover,Site_A,East,26.3
+2026-03-09,Aido Rover,Site_A,West,21.4
+2026-03-09,Aido Rover,Site_A,Dock,25.2
+2026-03-09,Aido Rover,Site_B,North,25.1
+2026-03-09,Aido Rover,Site_B,South,20.4
+2026-03-09,Aido Rover,Site_B,East,26.8
+2026-03-09,Aido Rover,Site_B,West,20.4
+2026-03-09,Aido Rover,Site_B,Dock,21.9
+2026-03-09,Aido Rover,Site_C,North,19.1
+2026-03-09,Aido Rover,Site_C,South,21.1
+2026-03-09,Aido Rover,Site_C,East,24.8
+2026-03-09,Aido Rover,Site_C,West,24.4
+2026-03-09,Aido Rover,Site_C,Dock,23.3
+2026-03-09,Aido Rover,Site_D,North,23.2
+2026-03-09,Aido Rover,Site_D,South,20.4
+2026-03-09,Aido Rover,Site_D,East,25.0
+2026-03-09,Aido Rover,Site_D,West,22.1
+2026-03-09,Aido Rover,Site_D,Dock,22.0
+2026-03-09,Aido Rover,Site_E,North,20.5
+2026-03-09,Aido Rover,Site_E,South,21.4
+2026-03-09,Aido Rover,Site_E,East,21.2
+2026-03-09,Aido Rover,Site_E,West,23.5
+2026-03-09,Aido Rover,Site_E,Dock,21.0
+2026-03-09,Fari,Area_1,,72.3
+2026-03-09,Fari,Area_2,,76.2
+2026-03-09,Fari,Area_3,,76.2
+2026-03-16,Aido Rover,Site_A,North,19.6
+2026-03-16,Aido Rover,Site_A,South,18.0
+2026-03-16,Aido Rover,Site_A,East,21.5
+2026-03-16,Aido Rover,Site_A,West,20.3
+2026-03-16,Aido Rover,Site_A,Dock,22.4
+2026-03-16,Aido Rover,Site_B,North,23.7
+2026-03-16,Aido Rover,Site_B,South,24.2
+2026-03-16,Aido Rover,Site_B,East,22.7
+2026-03-16,Aido Rover,Site_B,West,20.7
+2026-03-16,Aido Rover,Site_B,Dock,22.6
+2026-03-16,Aido Rover,Site_C,North,20.3
+2026-03-16,Aido Rover,Site_C,South,27.3
+2026-03-16,Aido Rover,Site_C,East,18.8
+2026-03-16,Aido Rover,Site_C,West,20.0
+2026-03-16,Aido Rover,Site_C,Dock,19.3
+2026-03-16,Aido Rover,Site_D,North,21.3
+2026-03-16,Aido Rover,Site_D,South,25.0
+2026-03-16,Aido Rover,Site_D,East,21.8
+2026-03-16,Aido Rover,Site_D,West,22.1
+2026-03-16,Aido Rover,Site_D,Dock,25.6
+2026-03-16,Aido Rover,Site_E,North,22.5
+2026-03-16,Aido Rover,Site_E,South,20.4
+2026-03-16,Aido Rover,Site_E,East,22.2
+2026-03-16,Aido Rover,Site_E,West,22.1
+2026-03-16,Aido Rover,Site_E,Dock,24.9
+2026-03-16,Fari,Area_1,,68.9
+2026-03-16,Fari,Area_2,,80.4
+2026-03-16,Fari,Area_3,,68.0
+2026-03-23,Aido Rover,Site_A,North,25.7
+2026-03-23,Aido Rover,Site_A,South,18.5
+2026-03-23,Aido Rover,Site_A,East,24.3
+2026-03-23,Aido Rover,Site_A,West,21.1
+2026-03-23,Aido Rover,Site_A,Dock,27.8
+2026-03-23,Aido Rover,Site_B,North,21.6
+2026-03-23,Aido Rover,Site_B,South,22.9
+2026-03-23,Aido Rover,Site_B,East,26.6
+2026-03-23,Aido Rover,Site_B,West,21.6
+2026-03-23,Aido Rover,Site_B,Dock,23.6
+2026-03-23,Aido Rover,Site_C,North,20.4
+2026-03-23,Aido Rover,Site_C,South,24.9
+2026-03-23,Aido Rover,Site_C,East,20.0
+2026-03-23,Aido Rover,Site_C,West,21.6
+2026-03-23,Aido Rover,Site_C,Dock,23.1
+2026-03-23,Aido Rover,Site_D,North,19.5
+2026-03-23,Aido Rover,Site_D,South,23.6
+2026-03-23,Aido Rover,Site_D,East,25.3
+2026-03-23,Aido Rover,Site_D,West,25.1
+2026-03-23,Aido Rover,Site_D,Dock,26.3
+2026-03-23,Aido Rover,Site_E,North,26.3
+2026-03-23,Aido Rover,Site_E,South,21.1
+2026-03-23,Aido Rover,Site_E,East,24.2
+2026-03-23,Aido Rover,Site_E,West,19.4
+2026-03-23,Aido Rover,Site_E,Dock,23.3
+2026-03-23,Fari,Area_1,,60.4
+2026-03-23,Fari,Area_2,,75.8
+2026-03-23,Fari,Area_3,,73.4
+2026-03-30,Aido Rover,Site_A,North,22.3
+2026-03-30,Aido Rover,Site_A,South,21.2
+2026-03-30,Aido Rover,Site_A,East,21.9
+2026-03-30,Aido Rover,Site_A,West,14.2
+2026-03-30,Aido Rover,Site_A,Dock,24.0
+2026-03-30,Aido Rover,Site_B,North,22.6
+2026-03-30,Aido Rover,Site_B,South,24.1
+2026-03-30,Aido Rover,Site_B,East,20.0
+2026-03-30,Aido Rover,Site_B,West,17.4
+2026-03-30,Aido Rover,Site_B,Dock,19.9
+2026-03-30,Aido Rover,Site_C,North,18.2
+2026-03-30,Aido Rover,Site_C,South,26.3
+2026-03-30,Aido Rover,Site_C,East,19.2
+2026-03-30,Aido Rover,Site_C,West,22.1
+2026-03-30,Aido Rover,Site_C,Dock,23.9
+2026-03-30,Aido Rover,Site_D,North,24.6
+2026-03-30,Aido Rover,Site_D,South,25.5
+2026-03-30,Aido Rover,Site_D,East,24.3
+2026-03-30,Aido Rover,Site_D,West,21.5
+2026-03-30,Aido Rover,Site_D,Dock,23.9
+2026-03-30,Aido Rover,Site_E,North,25.3
+2026-03-30,Aido Rover,Site_E,South,23.2
+2026-03-30,Aido Rover,Site_E,East,22.7
+2026-03-30,Aido Rover,Site_E,West,21.1
+2026-03-30,Aido Rover,Site_E,Dock,21.7
+2026-03-30,Fari,Area_1,,78.4
+2026-03-30,Fari,Area_2,,58.3
+2026-03-30,Fari,Area_3,,84.7
+2026-04-06,Aido Rover,Site_A,North,23.8
+2026-04-06,Aido Rover,Site_A,South,25.8
+2026-04-06,Aido Rover,Site_A,East,25.5
+2026-04-06,Aido Rover,Site_A,West,22.6
+2026-04-06,Aido Rover,Site_A,Dock,20.1
+2026-04-06,Aido Rover,Site_B,North,22.7
+2026-04-06,Aido Rover,Site_B,South,24.2
+2026-04-06,Aido Rover,Site_B,East,17.9
+2026-04-06,Aido Rover,Site_B,West,29.9
+2026-04-06,Aido Rover,Site_B,Dock,21.4
+2026-04-06,Aido Rover,Site_C,North,23.7
+2026-04-06,Aido Rover,Site_C,South,24.8
+2026-04-06,Aido Rover,Site_C,East,23.6
+2026-04-06,Aido Rover,Site_C,West,24.9
+2026-04-06,Aido Rover,Site_C,Dock,24.8
+2026-04-06,Aido Rover,Site_D,North,26.4
+2026-04-06,Aido Rover,Site_D,South,17.8
+2026-04-06,Aido Rover,Site_D,East,22.0
+2026-04-06,Aido Rover,Site_D,West,22.3
+2026-04-06,Aido Rover,Site_D,Dock,22.3
+2026-04-06,Aido Rover,Site_E,North,20.9
+2026-04-06,Aido Rover,Site_E,South,23.9
+2026-04-06,Aido Rover,Site_E,East,22.7
+2026-04-06,Aido Rover,Site_E,West,23.7
+2026-04-06,Aido Rover,Site_E,Dock,21.5
+2026-04-06,Fari,Area_1,,67.7
+2026-04-06,Fari,Area_2,,78.0
+2026-04-06,Fari,Area_3,,69.2
+2026-04-13,Aido Rover,Site_A,North,24.9
+2026-04-13,Aido Rover,Site_A,South,19.8
+2026-04-13,Aido Rover,Site_A,East,20.1
+2026-04-13,Aido Rover,Site_A,West,24.5
+2026-04-13,Aido Rover,Site_A,Dock,21.2
+2026-04-13,Aido Rover,Site_B,North,20.7
+2026-04-13,Aido Rover,Site_B,South,23.4
+2026-04-13,Aido Rover,Site_B,East,21.8
+2026-04-13,Aido Rover,Site_B,West,18.2
+2026-04-13,Aido Rover,Site_B,Dock,21.9
+2026-04-13,Aido Rover,Site_C,North,21.4
+2026-04-13,Aido Rover,Site_C,South,20.1
+2026-04-13,Aido Rover,Site_C,East,21.6
+2026-04-13,Aido Rover,Site_C,West,21.9
+2026-04-13,Aido Rover,Site_C,Dock,22.6
+2026-04-13,Aido Rover,Site_D,North,21.5
+2026-04-13,Aido Rover,Site_D,South,20.5
+2026-04-13,Aido Rover,Site_D,East,22.5
+2026-04-13,Aido Rover,Site_D,West,22.4
+2026-04-13,Aido Rover,Site_D,Dock,20.8
+2026-04-13,Aido Rover,Site_E,North,21.2
+2026-04-13,Aido Rover,Site_E,South,24.8
+2026-04-13,Aido Rover,Site_E,East,20.0
+2026-04-13,Aido Rover,Site_E,West,26.7
+2026-04-13,Aido Rover,Site_E,Dock,21.7
+2026-04-13,Fari,Area_1,,56.4
+2026-04-13,Fari,Area_2,,66.4
+2026-04-13,Fari,Area_3,,72.5
+2026-04-20,Aido Rover,Site_A,North,22.9
+2026-04-20,Aido Rover,Site_A,South,20.9
+2026-04-20,Aido Rover,Site_A,East,21.6
+2026-04-20,Aido Rover,Site_A,West,20.5
+2026-04-20,Aido Rover,Site_A,Dock,22.9
+2026-04-20,Aido Rover,Site_B,North,20.2
+2026-04-20,Aido Rover,Site_B,South,23.1
+2026-04-20,Aido Rover,Site_B,East,20.3
+2026-04-20,Aido Rover,Site_B,West,24.5
+2026-04-20,Aido Rover,Site_B,Dock,25.4
+2026-04-20,Aido Rover,Site_C,North,21.8
+2026-04-20,Aido Rover,Site_C,South,21.4
+2026-04-20,Aido Rover,Site_C,East,21.9
+2026-04-20,Aido Rover,Site_C,West,26.6
+2026-04-20,Aido Rover,Site_C,Dock,20.6
+2026-04-20,Aido Rover,Site_D,North,26.3
+2026-04-20,Aido Rover,Site_D,South,21.2
+2026-04-20,Aido Rover,Site_D,East,22.8
+2026-04-20,Aido Rover,Site_D,West,21.3
+2026-04-20,Aido Rover,Site_D,Dock,21.2
+2026-04-20,Aido Rover,Site_E,North,25.2
+2026-04-20,Aido Rover,Site_E,South,21.9
+2026-04-20,Aido Rover,Site_E,East,23.7
+2026-04-20,Aido Rover,Site_E,West,23.7
+2026-04-20,Aido Rover,Site_E,Dock,20.2
+2026-04-20,Fari,Area_1,,71.8
+2026-04-20,Fari,Area_2,,81.0
+2026-04-20,Fari,Area_3,,71.5
+2026-04-27,Aido Rover,Site_A,North,21.5
+2026-04-27,Aido Rover,Site_A,South,20.6
+2026-04-27,Aido Rover,Site_A,East,20.2
+2026-04-27,Aido Rover,Site_A,West,17.8
+2026-04-27,Aido Rover,Site_A,Dock,26.0
+2026-04-27,Aido Rover,Site_B,North,20.0
+2026-04-27,Aido Rover,Site_B,South,25.6
+2026-04-27,Aido Rover,Site_B,East,21.4
+2026-04-27,Aido Rover,Site_B,West,20.9
+2026-04-27,Aido Rover,Site_B,Dock,22.0
+2026-04-27,Aido Rover,Site_C,North,21.2
+2026-04-27,Aido Rover,Site_C,South,24.0
+2026-04-27,Aido Rover,Site_C,East,25.6
+2026-04-27,Aido Rover,Site_C,West,20.7
+2026-04-27,Aido Rover,Site_C,Dock,25.3
+2026-04-27,Aido Rover,Site_D,North,22.6
+2026-04-27,Aido Rover,Site_D,South,22.4
+2026-04-27,Aido Rover,Site_D,East,24.4
+2026-04-27,Aido Rover,Site_D,West,21.0
+2026-04-27,Aido Rover,Site_D,Dock,20.6
+2026-04-27,Aido Rover,Site_E,North,22.8
+2026-04-27,Aido Rover,Site_E,South,19.9
+2026-04-27,Aido Rover,Site_E,East,24.0
+2026-04-27,Aido Rover,Site_E,West,21.1
+2026-04-27,Aido Rover,Site_E,Dock,23.9
+2026-04-27,Fari,Area_1,,71.2
+2026-04-27,Fari,Area_2,,79.9
+2026-04-27,Fari,Area_3,,79.4
+2026-05-04,Aido Rover,Site_A,North,22.4
+2026-05-04,Aido Rover,Site_A,South,22.8
+2026-05-04,Aido Rover,Site_A,East,23.0
+2026-05-04,Aido Rover,Site_A,West,24.8
+2026-05-04,Aido Rover,Site_A,Dock,21.9
+2026-05-04,Aido Rover,Site_B,North,25.5
+2026-05-04,Aido Rover,Site_B,South,25.4
+2026-05-04,Aido Rover,Site_B,East,24.0
+2026-05-04,Aido Rover,Site_B,West,22.1
+2026-05-04,Aido Rover,Site_B,Dock,22.3
+2026-05-04,Aido Rover,Site_C,North,24.1
+2026-05-04,Aido Rover,Site_C,South,23.5
+2026-05-04,Aido Rover,Site_C,East,22.9
+2026-05-04,Aido Rover,Site_C,West,24.9
+2026-05-04,Aido Rover,Site_C,Dock,21.3
+2026-05-04,Aido Rover,Site_D,North,21.6
+2026-05-04,Aido Rover,Site_D,South,21.3
+2026-05-04,Aido Rover,Site_D,East,25.1
+2026-05-04,Aido Rover,Site_D,West,21.6
+2026-05-04,Aido Rover,Site_D,Dock,19.1
+2026-05-04,Aido Rover,Site_E,North,21.4
+2026-05-04,Aido Rover,Site_E,South,22.0
+2026-05-04,Aido Rover,Site_E,East,22.1
+2026-05-04,Aido Rover,Site_E,West,24.7
+2026-05-04,Aido Rover,Site_E,Dock,23.8
+2026-05-04,Fari,Area_1,,80.5
+2026-05-04,Fari,Area_2,,90.8
+2026-05-04,Fari,Area_3,,68.5
+2026-05-11,Aido Rover,Site_A,North,25.2
+2026-05-11,Aido Rover,Site_A,South,20.7
+2026-05-11,Aido Rover,Site_A,East,21.3
+2026-05-11,Aido Rover,Site_A,West,24.1
+2026-05-11,Aido Rover,Site_A,Dock,21.1
+2026-05-11,Aido Rover,Site_B,North,21.3
+2026-05-11,Aido Rover,Site_B,South,25.6
+2026-05-11,Aido Rover,Site_B,East,19.5
+2026-05-11,Aido Rover,Site_B,West,24.9
+2026-05-11,Aido Rover,Site_B,Dock,23.0
+2026-05-11,Aido Rover,Site_C,North,26.4
+2026-05-11,Aido Rover,Site_C,South,23.0
+2026-05-11,Aido Rover,Site_C,East,22.3
+2026-05-11,Aido Rover,Site_C,West,26.2
+2026-05-11,Aido Rover,Site_C,Dock,23.0
+2026-05-11,Aido Rover,Site_D,North,24.1
+2026-05-11,Aido Rover,Site_D,South,23.6
+2026-05-11,Aido Rover,Site_D,East,20.5
+2026-05-11,Aido Rover,Site_D,West,22.5
+2026-05-11,Aido Rover,Site_D,Dock,23.1
+2026-05-11,Aido Rover,Site_E,North,21.7
+2026-05-11,Aido Rover,Site_E,South,22.8
+2026-05-11,Aido Rover,Site_E,East,21.8
+2026-05-11,Aido Rover,Site_E,West,19.2
+2026-05-11,Aido Rover,Site_E,Dock,20.8
+2026-05-11,Fari,Area_1,,59.1
+2026-05-11,Fari,Area_2,,67.6
+2026-05-11,Fari,Area_3,,77.7
+2026-05-18,Aido Rover,Site_A,North,24.7
+2026-05-18,Aido Rover,Site_A,South,23.8
+2026-05-18,Aido Rover,Site_A,East,20.4
+2026-05-18,Aido Rover,Site_A,West,22.1
+2026-05-18,Aido Rover,Site_A,Dock,21.6
+2026-05-18,Aido Rover,Site_B,North,24.3
+2026-05-18,Aido Rover,Site_B,South,25.2
+2026-05-18,Aido Rover,Site_B,East,28.5
+2026-05-18,Aido Rover,Site_B,West,23.3
+2026-05-18,Aido Rover,Site_B,Dock,21.4
+2026-05-18,Aido Rover,Site_C,North,22.1
+2026-05-18,Aido Rover,Site_C,South,27.8
+2026-05-18,Aido Rover,Site_C,East,24.3
+2026-05-18,Aido Rover,Site_C,West,20.4
+2026-05-18,Aido Rover,Site_C,Dock,21.6
+2026-05-18,Aido Rover,Site_D,North,23.1
+2026-05-18,Aido Rover,Site_D,South,21.2
+2026-05-18,Aido Rover,Site_D,East,21.4
+2026-05-18,Aido Rover,Site_D,West,20.9
+2026-05-18,Aido Rover,Site_D,Dock,22.7
+2026-05-18,Aido Rover,Site_E,North,19.7
+2026-05-18,Aido Rover,Site_E,South,22.3
+2026-05-18,Aido Rover,Site_E,East,18.4
+2026-05-18,Aido Rover,Site_E,West,22.1
+2026-05-18,Aido Rover,Site_E,Dock,21.8
+2026-05-18,Fari,Area_1,,84.1
+2026-05-18,Fari,Area_2,,61.1
+2026-05-18,Fari,Area_3,,70.6
+2026-05-25,Aido Rover,Site_A,North,23.5
+2026-05-25,Aido Rover,Site_A,South,20.7
+2026-05-25,Aido Rover,Site_A,East,24.6
+2026-05-25,Aido Rover,Site_A,West,22.4
+2026-05-25,Aido Rover,Site_A,Dock,20.3
+2026-05-25,Aido Rover,Site_B,North,20.6
+2026-05-25,Aido Rover,Site_B,South,24.0
+2026-05-25,Aido Rover,Site_B,East,24.7
+2026-05-25,Aido Rover,Site_B,West,26.0
+2026-05-25,Aido Rover,Site_B,Dock,21.9
+2026-05-25,Aido Rover,Site_C,North,25.2
+2026-05-25,Aido Rover,Site_C,South,25.4
+2026-05-25,Aido Rover,Site_C,East,22.0
+2026-05-25,Aido Rover,Site_C,West,21.7
+2026-05-25,Aido Rover,Site_C,Dock,22.1
+2026-05-25,Aido Rover,Site_D,North,21.9
+2026-05-25,Aido Rover,Site_D,South,23.7
+2026-05-25,Aido Rover,Site_D,East,17.2
+2026-05-25,Aido Rover,Site_D,West,23.2
+2026-05-25,Aido Rover,Site_D,Dock,24.0
+2026-05-25,Aido Rover,Site_E,North,20.4
+2026-05-25,Aido Rover,Site_E,South,21.9
+2026-05-25,Aido Rover,Site_E,East,21.0
+2026-05-25,Aido Rover,Site_E,West,22.8
+2026-05-25,Aido Rover,Site_E,Dock,23.8
+2026-05-25,Fari,Area_1,,71.5
+2026-05-25,Fari,Area_2,,75.7
+2026-05-25,Fari,Area_3,,78.3
+2026-06-01,Aido Rover,Site_A,North,19.6
+2026-06-01,Aido Rover,Site_A,South,22.6
+2026-06-01,Aido Rover,Site_A,East,24.0
+2026-06-01,Aido Rover,Site_A,West,22.7
+2026-06-01,Aido Rover,Site_A,Dock,20.6
+2026-06-01,Aido Rover,Site_B,North,24.5
+2026-06-01,Aido Rover,Site_B,South,18.8
+2026-06-01,Aido Rover,Site_B,East,23.2
+2026-06-01,Aido Rover,Site_B,West,23.5
+2026-06-01,Aido Rover,Site_B,Dock,24.0
+2026-06-01,Aido Rover,Site_C,North,22.3
+2026-06-01,Aido Rover,Site_C,South,21.8
+2026-06-01,Aido Rover,Site_C,East,23.4
+2026-06-01,Aido Rover,Site_C,West,22.4
+2026-06-01,Aido Rover,Site_C,Dock,19.4
+2026-06-01,Aido Rover,Site_D,North,20.6
+2026-06-01,Aido Rover,Site_D,South,23.1
+2026-06-01,Aido Rover,Site_D,East,20.8
+2026-06-01,Aido Rover,Site_D,West,22.5
+2026-06-01,Aido Rover,Site_D,Dock,21.1
+2026-06-01,Aido Rover,Site_E,North,23.9
+2026-06-01,Aido Rover,Site_E,South,26.2
+2026-06-01,Aido Rover,Site_E,East,20.3
+2026-06-01,Aido Rover,Site_E,West,23.5
+2026-06-01,Aido Rover,Site_E,Dock,23.1
+2026-06-01,Fari,Area_1,,66.3
+2026-06-01,Fari,Area_2,,72.9
+2026-06-01,Fari,Area_3,,88.1
+2026-06-08,Aido Rover,Site_A,North,22.7
+2026-06-08,Aido Rover,Site_A,South,23.7
+2026-06-08,Aido Rover,Site_A,East,24.7
+2026-06-08,Aido Rover,Site_A,West,22.3
+2026-06-08,Aido Rover,Site_A,Dock,18.5
+2026-06-08,Aido Rover,Site_B,North,24.4
+2026-06-08,Aido Rover,Site_B,South,20.8
+2026-06-08,Aido Rover,Site_B,East,16.7
+2026-06-08,Aido Rover,Site_B,West,20.7
+2026-06-08,Aido Rover,Site_B,Dock,20.6
+2026-06-08,Aido Rover,Site_C,North,25.3
+2026-06-08,Aido Rover,Site_C,South,21.4
+2026-06-08,Aido Rover,Site_C,East,26.4
+2026-06-08,Aido Rover,Site_C,West,25.0
+2026-06-08,Aido Rover,Site_C,Dock,22.3
+2026-06-08,Aido Rover,Site_D,North,21.3
+2026-06-08,Aido Rover,Site_D,South,25.5
+2026-06-08,Aido Rover,Site_D,East,24.1
+2026-06-08,Aido Rover,Site_D,West,21.5
+2026-06-08,Aido Rover,Site_D,Dock,21.5
+2026-06-08,Aido Rover,Site_E,North,23.9
+2026-06-08,Aido Rover,Site_E,South,25.2
+2026-06-08,Aido Rover,Site_E,East,24.4
+2026-06-08,Aido Rover,Site_E,West,27.5
+2026-06-08,Aido Rover,Site_E,Dock,23.0
+2026-06-08,Fari,Area_1,,69.8
+2026-06-08,Fari,Area_2,,80.0
+2026-06-08,Fari,Area_3,,68.2
+2026-06-15,Aido Rover,Site_A,North,25.8
+2026-06-15,Aido Rover,Site_A,South,20.4
+2026-06-15,Aido Rover,Site_A,East,21.9
+2026-06-15,Aido Rover,Site_A,West,24.5
+2026-06-15,Aido Rover,Site_A,Dock,25.1
+2026-06-15,Aido Rover,Site_B,North,22.6
+2026-06-15,Aido Rover,Site_B,South,25.7
+2026-06-15,Aido Rover,Site_B,East,19.6
+2026-06-15,Aido Rover,Site_B,West,21.2
+2026-06-15,Aido Rover,Site_B,Dock,22.5
+2026-06-15,Aido Rover,Site_C,North,23.2
+2026-06-15,Aido Rover,Site_C,South,19.6
+2026-06-15,Aido Rover,Site_C,East,24.8
+2026-06-15,Aido Rover,Site_C,West,21.9
+2026-06-15,Aido Rover,Site_C,Dock,20.1
+2026-06-15,Aido Rover,Site_D,North,20.5
+2026-06-15,Aido Rover,Site_D,South,25.4
+2026-06-15,Aido Rover,Site_D,East,21.0
+2026-06-15,Aido Rover,Site_D,West,21.6
+2026-06-15,Aido Rover,Site_D,Dock,23.9
+2026-06-15,Aido Rover,Site_E,North,21.4
+2026-06-15,Aido Rover,Site_E,South,20.1
+2026-06-15,Aido Rover,Site_E,East,20.0
+2026-06-15,Aido Rover,Site_E,West,25.9
+2026-06-15,Aido Rover,Site_E,Dock,19.7
+2026-06-15,Fari,Area_1,,68.6
+2026-06-15,Fari,Area_2,,74.6
+2026-06-15,Fari,Area_3,,73.3
+2026-06-22,Aido Rover,Site_A,North,25.3
+2026-06-22,Aido Rover,Site_A,South,23.1
+2026-06-22,Aido Rover,Site_A,East,27.0
+2026-06-22,Aido Rover,Site_A,West,24.6
+2026-06-22,Aido Rover,Site_A,Dock,20.4
+2026-06-22,Aido Rover,Site_B,North,21.5
+2026-06-22,Aido Rover,Site_B,South,20.6
+2026-06-22,Aido Rover,Site_B,East,20.1
+2026-06-22,Aido Rover,Site_B,West,19.9
+2026-06-22,Aido Rover,Site_B,Dock,23.1
+2026-06-22,Aido Rover,Site_C,North,27.1
+2026-06-22,Aido Rover,Site_C,South,23.1
+2026-06-22,Aido Rover,Site_C,East,23.1
+2026-06-22,Aido Rover,Site_C,West,23.2
+2026-06-22,Aido Rover,Site_C,Dock,24.7
+2026-06-22,Aido Rover,Site_D,North,23.9
+2026-06-22,Aido Rover,Site_D,South,22.2
+2026-06-22,Aido Rover,Site_D,East,28.4
+2026-06-22,Aido Rover,Site_D,West,22.4
+2026-06-22,Aido Rover,Site_D,Dock,21.5
+2026-06-22,Aido Rover,Site_E,North,21.5
+2026-06-22,Aido Rover,Site_E,South,21.7
+2026-06-22,Aido Rover,Site_E,East,27.1
+2026-06-22,Aido Rover,Site_E,West,21.3
+2026-06-22,Aido Rover,Site_E,Dock,22.0
+2026-06-22,Fari,Area_1,,64.1
+2026-06-22,Fari,Area_2,,63.9
+2026-06-22,Fari,Area_3,,71.1
+2026-06-29,Aido Rover,Site_A,North,7.2
+2026-06-29,Aido Rover,Site_A,South,5.8
+2026-06-29,Aido Rover,Site_A,East,5.8
+2026-06-29,Aido Rover,Site_A,West,6.9
+2026-06-29,Aido Rover,Site_A,Dock,6.8
+2026-06-29,Aido Rover,Site_B,North,5.9
+2026-06-29,Aido Rover,Site_B,South,5.5
+2026-06-29,Aido Rover,Site_B,East,6.5
+2026-06-29,Aido Rover,Site_B,West,5.4
+2026-06-29,Aido Rover,Site_B,Dock,6.8
+2026-06-29,Aido Rover,Site_C,North,5.7
+2026-06-29,Aido Rover,Site_C,South,5.9
+2026-06-29,Aido Rover,Site_C,East,6.3
+2026-06-29,Aido Rover,Site_C,West,6.4
+2026-06-29,Aido Rover,Site_C,Dock,7.0
+2026-06-29,Aido Rover,Site_D,North,6.2
+2026-06-29,Aido Rover,Site_D,South,7.1
+2026-06-29,Aido Rover,Site_D,East,6.6
+2026-06-29,Aido Rover,Site_D,West,6.7
+2026-06-29,Aido Rover,Site_D,Dock,6.8
+2026-06-29,Aido Rover,Site_E,North,5.9
+2026-06-29,Aido Rover,Site_E,South,6.3
+2026-06-29,Aido Rover,Site_E,East,5.5
+2026-06-29,Aido Rover,Site_E,West,6.8
+2026-06-29,Aido Rover,Site_E,Dock,7.3
+2026-06-29,Fari,Area_1,,20.4
+2026-06-29,Fari,Area_2,,15.1
+2026-06-29,Fari,Area_3,,19.4

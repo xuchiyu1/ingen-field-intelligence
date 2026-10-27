@@ -1,0 +1,21 @@
+{
+  "run_at": "2026-10-27T02:11:04+00:00",
+  "model": "claude-opus-4-7",
+  "backend": "claude-cli",
+  "prompt_version": "classify_v1",
+  "input": "data/field_reports.csv",
+  "split": null,
+  "batch_size": 25,
+  "n_reports": 2000,
+  "n_flagged": 0,
+  "n_rerun": 550,
+  "tokens": {
+    "input_tokens": 566,
+    "output_tokens": 356327,
+    "cache_read_input_tokens": 3631425,
+    "cache_creation_input_tokens": 838786
+  },
+  "estimated_cost_usd": 15.9691,
+  "cost_note": "claude -p equivalent cost; billed to the Claude subscription, not charged",
+  "seconds": 7266.0
+}

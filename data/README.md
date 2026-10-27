@@ -25,5 +25,19 @@ The generator's labels and planted patterns are kept sealed so they cannot influ
 sha256(sealed/answer_key.csv) = 24e41dccba8d5f6436f881c61fc3c2f815f0c67e797a91ad148d06a7a16777d5
 ```
 
+## Supplementary files for Week 3 (`src/generate_exposure.py`, seed 2026)
+Week 3 compares incident rates and pre-incident vs normal telemetry, which the corpus alone cannot support. These files were generated **after** the corpus, without reading or changing it or the answer key.
+
+```bash
+python src/generate_exposure.py --seed 2026
+```
+
+| File | Contents |
+|---|---|
+| `exposure_hours.csv` | 756 rows: operating hours per week × Rover site-zone (25) or Fari area (3), 27 weeks. About equal effort per site-zone (the corpus placed reports uniformly), ±10% weekly noise |
+| `normal_telemetry.csv` | 3,000 one-hour windows with no incident report (2,353 Rover, 647 Fari), drawn from the generator's no-incident baseline distributions |
+
+Because both are drawn from stated assumptions rather than measured, rate and telemetry findings show what the method can detect, not real fleet behaviour.
+
 ## Still to add
 - A few hundred public review snippets about service and security robots (keyword collection).
