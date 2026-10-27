@@ -16,6 +16,6 @@ Read honestly, the LLM's lead over the keyword baseline is two reports out of 10
 Writing the keyword baseline forced the taxonomy's boundary rules into a fixed order: designed behaviour (NO_INCIDENT) and AI misjudgements (S5) have to be checked before hardware, and hardware faults before their environmental triggers. Otherwise "camera fogged in the rain" would always be classed as Weather. This is the same "classify by where the robot failed" rule from Week 1, now written as code. It also shows the limit of keywords: a report like "heart-rate reading 40 BPM, resident was fine" matches nothing that separates S5 from H3. That gap is exactly where an LLM should beat the baseline, and the S5/H3 rows are the first place I will look in the error analysis.
 
 ## Next
-1. Second labelling round on the 50 double-label reports and Cohen's kappa.
+1. ~~Second labelling round and Cohen's kappa~~ Done: kappa 1.0 on 50 reports, but same-day re-labelling inflates this; a second labeller is the real test.
 2. Clarify the E1/NO_INCIDENT and U2/S5 boundaries and the Level-4 severity rule in the Taxonomy Guide.
 3. Week 3: trends, geospatial hotspots and telemetry on the fully classified corpus.

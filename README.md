@@ -27,8 +27,8 @@ Applied AI Analyst Internship, inGen Dynamics (Futurenauts Internship Program). 
 |---|---|
 | [`src/classify_llm.py`](src/classify_llm.py) + [`prompts/classify_v1.md`](prompts/classify_v1.md): LLM classifier with schema-validated JSON output, retry/flagging, versioned prompt, token and cost logging | Built |
 | [`src/baseline.py`](src/baseline.py): keyword-rule baseline and TF-IDF + logistic regression baseline | Built; keyword baseline run on held-out split |
-| [`src/evaluate.py`](src/evaluate.py): accuracy, per-category precision/recall, confusion matrix, severity agreement, Cohen's kappa, error file | Built and tested on placeholder labels |
-| [`src/make_eval_report.py`](src/make_eval_report.py): builds `W02_Evaluation_Report.docx` (held-out accuracy vs baselines, per-category results, kappa, human-review threshold, error causes, cost) | Built and tested on placeholder data |
+| [`src/evaluate.py`](src/evaluate.py): accuracy, per-category precision/recall, confusion matrix, severity agreement, Cohen's kappa, error file | Done: kappa 1.0 (same-day re-label, see report) |
+| [`src/make_eval_report.py`](src/make_eval_report.py): builds `W02_Evaluation_Report.docx` (held-out accuracy vs baselines, per-category results, kappa, human-review threshold, error causes, cost) | Done: `W02_Evaluation_Report.docx` |
 | [`prompts/CHANGELOG.md`](prompts/CHANGELOG.md): prompt versions and their tuning-split effect | Started |
 | [`weekly/Wk-02-Log.md`](weekly/Wk-02-Log.md) | Done |
 | [`W02_Evaluation_Report.docx`](W02_Evaluation_Report.docx): held-out accuracy **LLM 96.0%** vs keyword 94.0% vs TF-IDF 78.0%, per-category results, human-review threshold, error causes | Done |
