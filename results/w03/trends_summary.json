@@ -1,0 +1,41 @@
+{
+  "rover_hours": 14490,
+  "cold_battery": {
+    "share_of_time_below_0c": 0.182,
+    "h1_reports_cold": 56,
+    "h1_reports_warm": 140,
+    "h1_share_of_reports_cold": 0.214,
+    "h1_share_of_reports_warm": 0.107,
+    "fisher_p_share": 7.908051643800802e-06,
+    "h1_rate_ratio_cold_vs_warm": 1.8,
+    "ci": [
+      1.32,
+      2.45
+    ],
+    "p": 0.0003894251911234366
+  },
+  "fari": {
+    "u2_reports": 159,
+    "delay_before": 13,
+    "delay_after": 67,
+    "delay_per_100h_before": 0.474,
+    "delay_per_100h_after": 2.372,
+    "delay_rate_ratio_after_vs_before": 5.01,
+    "ci": [
+      2.76,
+      9.07
+    ],
+    "p": 8.421111852491271e-10,
+    "mean_latency_s_before": 1.75,
+    "mean_latency_s_after": 3.04,
+    "example_quotes": {
+      "response delay": "Resident asked Fari a question and waited ages for a reply.",
+      "voice too quiet": "Resident says Fari's voice is too quiet even at max",
+      "screen confusing": "my father finds fari's screen confusing.",
+      "repetitive conversation": "Fari keeps repeating the same joke, residents bored.",
+      "accent not understood": "Fari doesn't understand one resident's accent"
+    }
+  },
+  "significant_trends_q05": [],
+  "significant_site_cells_q05": []
+}
