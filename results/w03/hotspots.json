@@ -1,0 +1,268 @@
+{
+  "zones": 25,
+  "band_m": 500,
+  "significant_after_bh": 0,
+  "neighbours_per_zone": {
+    "1": 20,
+    "4": 5
+  },
+  "unadjusted_p05": [
+    {
+      "category": "E3",
+      "site": "Site_A",
+      "zone": "East",
+      "incidents": 9,
+      "per_100h": 1.5595,
+      "rr_vs_fleet": 2.6461,
+      "ci_low": 1.3295,
+      "ci_high": 5.2663,
+      "p_rate": 0.0105,
+      "gi_z": 1.7244,
+      "gi_p_sim": 0.21799999475479126,
+      "q_rate": 0.2614
+    },
+    {
+      "category": "S1",
+      "site": "Site_C",
+      "zone": "North",
+      "incidents": 15,
+      "per_100h": 2.5804,
+      "rr_vs_fleet": 2.0746,
+      "ci_low": 1.2241,
+      "ci_high": 3.516,
+      "p_rate": 0.0133,
+      "gi_z": 0.3388,
+      "gi_p_sim": 0.0010000000474974513,
+      "q_rate": 0.332
+    },
+    {
+      "category": "E2",
+      "site": "Site_C",
+      "zone": "Dock",
+      "incidents": 0,
+      "per_100h": 0.0,
+      "rr_vs_fleet": 0.0,
+      "ci_low": NaN,
+      "ci_high": NaN,
+      "p_rate": 0.0171,
+      "gi_z": -1.0219,
+      "gi_p_sim": 0.017999999225139618,
+      "q_rate": 0.416
+    },
+    {
+      "category": "S5",
+      "site": "Site_E",
+      "zone": "North",
+      "incidents": 8,
+      "per_100h": 1.4192,
+      "rr_vs_fleet": 2.5339,
+      "ci_low": 1.224,
+      "ci_high": 5.2456,
+      "p_rate": 0.0189,
+      "gi_z": 1.2691,
+      "gi_p_sim": 0.3799999952316284,
+      "q_rate": 0.4728
+    },
+    {
+      "category": "H3",
+      "site": "Site_A",
+      "zone": "East",
+      "incidents": 9,
+      "per_100h": 1.5595,
+      "rr_vs_fleet": 2.3585,
+      "ci_low": 1.1894,
+      "ci_high": 4.6765,
+      "p_rate": 0.0196,
+      "gi_z": 1.4749,
+      "gi_p_sim": 0.44600000977516174,
+      "q_rate": 0.491
+    },
+    {
+      "category": "U1",
+      "site": "Site_A",
+      "zone": "East",
+      "incidents": 6,
+      "per_100h": 1.0397,
+      "rr_vs_fleet": 2.893,
+      "ci_low": 1.2405,
+      "ci_high": 6.7472,
+      "p_rate": 0.0236,
+      "gi_z": 0.5032,
+      "gi_p_sim": 0.0010000000474974513,
+      "q_rate": 0.591
+    },
+    {
+      "category": "E1",
+      "site": "Site_C",
+      "zone": "West",
+      "incidents": 8,
+      "per_100h": 1.3877,
+      "rr_vs_fleet": 2.3262,
+      "ci_low": 1.126,
+      "ci_high": 4.8059,
+      "p_rate": 0.0287,
+      "gi_z": 0.8727,
+      "gi_p_sim": 0.0860000029206276,
+      "q_rate": 0.7186
+    },
+    {
+      "category": "E3",
+      "site": "Site_E",
+      "zone": "West",
+      "incidents": 0,
+      "per_100h": 0.0,
+      "rr_vs_fleet": 0.0,
+      "ci_low": NaN,
+      "ci_high": NaN,
+      "p_rate": 0.0345,
+      "gi_z": -0.3232,
+      "gi_p_sim": 0.16500000655651093,
+      "q_rate": 0.4316
+    },
+    {
+      "category": "E2",
+      "site": "Site_D",
+      "zone": "North",
+      "incidents": 10,
+      "per_100h": 1.6863,
+      "rr_vs_fleet": 2.0924,
+      "ci_low": 1.0958,
+      "ci_high": 3.9957,
+      "p_rate": 0.0347,
+      "gi_z": 1.655,
+      "gi_p_sim": 0.041999999433755875,
+      "q_rate": 0.416
+    },
+    {
+      "category": "S1",
+      "site": "Site_C",
+      "zone": "Dock",
+      "incidents": 2,
+      "per_100h": 0.3429,
+      "rr_vs_fleet": 0.2564,
+      "ci_low": 0.0637,
+      "ci_high": 1.0329,
+      "p_rate": 0.0382,
+      "gi_z": -0.0572,
+      "gi_p_sim": 0.2370000034570694,
+      "q_rate": 0.4565
+    },
+    {
+      "category": "H1",
+      "site": "Site_E",
+      "zone": "East",
+      "incidents": 14,
+      "per_100h": 2.4361,
+      "rr_vs_fleet": 1.8626,
+      "ci_low": 1.0815,
+      "ci_high": 3.2077,
+      "p_rate": 0.0403,
+      "gi_z": 1.1038,
+      "gi_p_sim": 0.3779999911785126,
+      "q_rate": 0.8014
+    },
+    {
+      "category": "S2",
+      "site": "Site_B",
+      "zone": "East",
+      "incidents": 10,
+      "per_100h": 1.7388,
+      "rr_vs_fleet": 1.9833,
+      "ci_low": 1.0409,
+      "ci_high": 3.779,
+      "p_rate": 0.0428,
+      "gi_z": 1.095,
+      "gi_p_sim": 0.3160000145435333,
+      "q_rate": 0.3456
+    },
+    {
+      "category": "S2",
+      "site": "Site_A",
+      "zone": "West",
+      "incidents": 10,
+      "per_100h": 1.7352,
+      "rr_vs_fleet": 1.979,
+      "ci_low": 1.0386,
+      "ci_high": 3.7708,
+      "p_rate": 0.0432,
+      "gi_z": 0.0969,
+      "gi_p_sim": 0.03099999949336052,
+      "q_rate": 0.3456
+    },
+    {
+      "category": "S2",
+      "site": "Site_E",
+      "zone": "Dock",
+      "incidents": 10,
+      "per_100h": 1.7322,
+      "rr_vs_fleet": 1.9754,
+      "ci_low": 1.0367,
+      "ci_high": 3.764,
+      "p_rate": 0.0436,
+      "gi_z": 0.1351,
+      "gi_p_sim": 0.33799999952316284,
+      "q_rate": 0.3456
+    },
+    {
+      "category": "H2",
+      "site": "Site_C",
+      "zone": "West",
+      "incidents": 9,
+      "per_100h": 1.5611,
+      "rr_vs_fleet": 2.1089,
+      "ci_low": 1.067,
+      "ci_high": 4.168,
+      "p_rate": 0.0457,
+      "gi_z": 0.5304,
+      "gi_p_sim": 0.0729999989271164,
+      "q_rate": 0.93
+    }
+  ],
+  "fari_area_rates_per_100h": {
+    "H1": {
+      "Area_1": 0.436,
+      "Area_2": 0.373,
+      "Area_3": 0.43
+    },
+    "H3": {
+      "Area_1": 0.491,
+      "Area_2": 0.427,
+      "Area_3": 0.484
+    },
+    "H4": {
+      "Area_1": 0.327,
+      "Area_2": 0.533,
+      "Area_3": 0.538
+    },
+    "NO_INCIDENT": {
+      "Area_1": 0.927,
+      "Area_2": 0.747,
+      "Area_3": 0.377
+    },
+    "S1": {
+      "Area_1": 0.109,
+      "Area_2": 0.053,
+      "Area_3": 0.054
+    },
+    "S3": {
+      "Area_1": 0.545,
+      "Area_2": 0.533,
+      "Area_3": 0.592
+    },
+    "S4": {
+      "Area_1": 1.036,
+      "Area_2": 0.747,
+      "Area_3": 0.861
+    },
+    "S5": {
+      "Area_1": 1.308,
+      "Area_2": 1.493,
+      "Area_3": 0.968
+    },
+    "U2": {
+      "Area_1": 2.453,
+      "Area_2": 2.986,
+      "Area_3": 3.121
+    }
+  }
+}

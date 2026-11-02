@@ -51,6 +51,27 @@ python src/classify_llm.py --input eval/gold_set.csv --split tuning
 python src/evaluate.py results/llm_classify_v1_gold_set_tuning.csv --split tuning
 ```
 
+## Week 3: Trends, Geospatial Hotspots, Telemetry & Answer-Key Check
+
+| Deliverable | Status |
+|---|---|
+| [`src/generate_exposure.py`](src/generate_exposure.py): operating hours and no-incident telemetry, generated after the corpus (see [`data/README.md`](data/README.md)) | Done |
+| [`src/w03_trends.py`](src/w03_trends.py): incident rates per 100 operating hours, quasi-Poisson weekly trends, site comparison, cold-weather battery, severity, Fari complaint themes | Done |
+| [`src/w03_hotspots.py`](src/w03_hotspots.py): zone rates vs fleet (exact test, BH) and Getis-Ord Gi*; [`maps/w03_s1_hotspot.png`](maps/w03_s1_hotspot.png) | Done |
+| [`src/w03_telemetry.py`](src/w03_telemetry.py): pre-incident vs normal telemetry (Welch CI, Cohen's d, BH) and 5-fold cross-validated classifier | Done |
+| [`src/w03_answer_key.py`](src/w03_answer_key.py): opens the sealed key (sha256 checked) after the analysis; 3 of 4 planted patterns found, 1 partial | Done |
+| [`W03_Findings_Report.docx`](W03_Findings_Report.docx): 8 findings with evidence, confidence, caveats and actions | Done |
+| [`weekly/Wk-03-Log.md`](weekly/Wk-03-Log.md) | Done |
+
+**Week 3 run order:**
+```bash
+pip install geopandas esda libpysal statsmodels
+python src/generate_exposure.py --seed 2026
+python src/w03_trends.py && python src/w03_hotspots.py && python src/w03_telemetry.py
+python src/w03_answer_key.py          # only after the analyses are final
+python src/make_findings_report.py
+```
+
 ## Repository structure
 ```
 ├── W01_Data_Landscape.docx

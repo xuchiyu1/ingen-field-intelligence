@@ -1,0 +1,76 @@
+{
+  "sha256_ok": true,
+  "classifier_vs_generator": {
+    "category_accuracy": 0.969,
+    "severity_exact": 0.3585,
+    "severity_within_1": 0.8155,
+    "top_confusions": {
+      "E1->NO_INCIDENT": 27,
+      "H3->E1": 7,
+      "S5->NO_INCIDENT": 6,
+      "U2->S1": 4,
+      "S5->H3": 3,
+      "U2->S5": 3
+    }
+  },
+  "P1_navigation_hotspot": {
+    "found_with_predicted_labels": {
+      "rr": 2.07,
+      "ci": [
+        1.22,
+        3.52
+      ],
+      "p": 0.0133,
+      "rank_of_25": 1,
+      "q_bh_25_zones": 0.332
+    },
+    "with_true_labels": {
+      "rr": 1.95,
+      "ci": [
+        1.13,
+        3.36
+      ],
+      "p": 0.0228,
+      "rank_of_25": 1,
+      "q_bh_25_zones": 0.5707
+    },
+    "verdict": "partial: highest S1 zone in the fleet, but not significant after correction"
+  },
+  "P2_cold_battery": {
+    "found": {
+      "share_of_time_below_0c": 0.182,
+      "h1_reports_cold": 56,
+      "h1_reports_warm": 140,
+      "h1_share_of_reports_cold": 0.214,
+      "h1_share_of_reports_warm": 0.107,
+      "fisher_p_share": 7.908051643800802e-06,
+      "h1_rate_ratio_cold_vs_warm": 1.8,
+      "ci": [
+        1.32,
+        2.45
+      ],
+      "p": 0.0003894251911234366
+    },
+    "h1_share_true_labels_cold_vs_warm": [
+      0.214,
+      0.107
+    ],
+    "verdict": "found"
+  },
+  "P3_motor_current_before_sensor_faults": {
+    "found_trend_diff_a_per_h": 1.33,
+    "cohens_d": 4.4,
+    "verdict": "found"
+  },
+  "P4_fari_delay": {
+    "found": {
+      "delay_rate_ratio_after_vs_before": 5.01,
+      "ci": [
+        2.76,
+        9.07
+      ],
+      "p": 8.421111852491271e-10
+    },
+    "verdict": "found"
+  }
+}

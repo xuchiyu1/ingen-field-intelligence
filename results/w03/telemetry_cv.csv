@@ -1,0 +1,16 @@
+target,n_incident,auc_mean,auc_sd,top_feature
+any incident,1477,0.723,0.013,loc_confidence_min
+E1,91,0.981,0.012,speed_mean_mps
+E2,122,0.997,0.001,speed_mean_mps
+E3,91,0.512,0.036,battery_drop_pct_1h
+H1,196,1.0,0.0,battery_drop_pct_1h
+H2,112,0.478,0.052,motor_current_trend_a_per_h
+H3,101,0.996,0.007,motor_current_trend_a_per_h
+H4,100,0.55,0.069,battery_drop_pct_1h
+S1,188,0.986,0.012,loc_confidence_min
+S2,132,0.437,0.017,speed_mean_mps
+S3,117,0.444,0.04,speed_mean_mps
+S4,57,0.499,0.043,battery_pct
+S5,86,0.521,0.09,loc_confidence_min
+U1,56,0.552,0.088,motor_current_mean_a
+U2,28,0.544,0.15,loc_confidence_min

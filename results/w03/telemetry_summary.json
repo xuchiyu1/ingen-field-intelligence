@@ -1,0 +1,175 @@
+{
+  "normal_windows": 2353,
+  "incident_windows": 1477,
+  "large_effects_q05_d08": [
+    {
+      "category": "E1",
+      "feature": "speed_mean_mps",
+      "diff": -0.359,
+      "ci_low": -0.393,
+      "ci_high": -0.324,
+      "cohens_d": -2.617
+    },
+    {
+      "category": "E2",
+      "feature": "speed_mean_mps",
+      "diff": -0.388,
+      "ci_low": -0.408,
+      "ci_high": -0.367,
+      "cohens_d": -3.612
+    },
+    {
+      "category": "H1",
+      "feature": "battery_pct",
+      "diff": -48.212,
+      "ci_low": -49.421,
+      "ci_high": -47.002,
+      "cohens_d": -3.614
+    },
+    {
+      "category": "H1",
+      "feature": "battery_drop_pct_1h",
+      "diff": 20.382,
+      "ci_low": 19.328,
+      "ci_high": 21.436,
+      "cohens_d": 3.616
+    },
+    {
+      "category": "H3",
+      "feature": "motor_current_mean_a",
+      "diff": 2.204,
+      "ci_low": 1.887,
+      "ci_high": 2.522,
+      "cohens_d": 1.563
+    },
+    {
+      "category": "H3",
+      "feature": "motor_current_trend_a_per_h",
+      "diff": 1.328,
+      "ci_low": 1.266,
+      "ci_high": 1.391,
+      "cohens_d": 4.403
+    },
+    {
+      "category": "S1",
+      "feature": "loc_confidence_min",
+      "diff": -0.431,
+      "ci_low": -0.449,
+      "ci_high": -0.413,
+      "cohens_d": -4.675
+    }
+  ],
+  "cv_auc": [
+    {
+      "target": "any incident",
+      "n_incident": 1477,
+      "auc_mean": 0.723,
+      "auc_sd": 0.013,
+      "top_feature": "loc_confidence_min"
+    },
+    {
+      "target": "E1",
+      "n_incident": 91,
+      "auc_mean": 0.981,
+      "auc_sd": 0.012,
+      "top_feature": "speed_mean_mps"
+    },
+    {
+      "target": "E2",
+      "n_incident": 122,
+      "auc_mean": 0.997,
+      "auc_sd": 0.001,
+      "top_feature": "speed_mean_mps"
+    },
+    {
+      "target": "E3",
+      "n_incident": 91,
+      "auc_mean": 0.512,
+      "auc_sd": 0.036,
+      "top_feature": "battery_drop_pct_1h"
+    },
+    {
+      "target": "H1",
+      "n_incident": 196,
+      "auc_mean": 1.0,
+      "auc_sd": 0.0,
+      "top_feature": "battery_drop_pct_1h"
+    },
+    {
+      "target": "H2",
+      "n_incident": 112,
+      "auc_mean": 0.478,
+      "auc_sd": 0.052,
+      "top_feature": "motor_current_trend_a_per_h"
+    },
+    {
+      "target": "H3",
+      "n_incident": 101,
+      "auc_mean": 0.996,
+      "auc_sd": 0.007,
+      "top_feature": "motor_current_trend_a_per_h"
+    },
+    {
+      "target": "H4",
+      "n_incident": 100,
+      "auc_mean": 0.55,
+      "auc_sd": 0.069,
+      "top_feature": "battery_drop_pct_1h"
+    },
+    {
+      "target": "S1",
+      "n_incident": 188,
+      "auc_mean": 0.986,
+      "auc_sd": 0.012,
+      "top_feature": "loc_confidence_min"
+    },
+    {
+      "target": "S2",
+      "n_incident": 132,
+      "auc_mean": 0.437,
+      "auc_sd": 0.017,
+      "top_feature": "speed_mean_mps"
+    },
+    {
+      "target": "S3",
+      "n_incident": 117,
+      "auc_mean": 0.444,
+      "auc_sd": 0.04,
+      "top_feature": "speed_mean_mps"
+    },
+    {
+      "target": "S4",
+      "n_incident": 57,
+      "auc_mean": 0.499,
+      "auc_sd": 0.043,
+      "top_feature": "battery_pct"
+    },
+    {
+      "target": "S5",
+      "n_incident": 86,
+      "auc_mean": 0.521,
+      "auc_sd": 0.09,
+      "top_feature": "loc_confidence_min"
+    },
+    {
+      "target": "U1",
+      "n_incident": 56,
+      "auc_mean": 0.552,
+      "auc_sd": 0.088,
+      "top_feature": "motor_current_mean_a"
+    },
+    {
+      "target": "U2",
+      "n_incident": 28,
+      "auc_mean": 0.544,
+      "auc_sd": 0.15,
+      "top_feature": "loc_confidence_min"
+    }
+  ],
+  "fari_u2_latency_s": 4.07,
+  "fari_normal_latency_s": 1.41,
+  "fari_latency_diff_ci": [
+    2.21,
+    3.11
+  ]
+}
