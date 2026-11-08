@@ -100,11 +100,14 @@ def score(pred_path, split):
     errors = [(i, gold[i]["label_category"].strip(), preds[i]["pred_category"])
               for i in ids if gold[i]["label_category"].strip() != preds[i]["pred_category"]]
     out = Path(pred_path).with_name(Path(pred_path).stem + "_errors.csv")
+    # keep causes already filled in by hand, so a rerun never erases the error review
+    causes = ({r["report_id"]: r["error_cause"] for r in csv.DictReader(open(out, encoding="utf-8"))}
+              if out.exists() else {})
     with open(out, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["report_id", "gold", "pred", "text", "error_cause"])
         for i, g, p in errors:
-            w.writerow([i, g, p, gold[i]["text"], ""])
+            w.writerow([i, g, p, gold[i]["text"], causes.get(i, "")])
     print(f"\n{len(errors)} errors written to {out.relative_to(ROOT)} "
           "(fill error_cause: rule unclear / genuinely ambiguous / multiple issues / model misreading / gold label wrong)")
 

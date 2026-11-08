@@ -5,6 +5,50 @@ Applied AI Analyst Internship, inGen Dynamics (Futurenauts Internship Program). 
 
 **Primary platform:** Aido Rover (outdoor patrol). **Secondary:** Fari (indoor eldercare companion).
 
+**Version 1.0.** Every figure and report rebuilds from one command. All data is synthetic.
+
+## Quickstart
+```bash
+pip install -r requirements.txt
+python run_all.py            # data -> evaluation -> analysis -> reports, about 30 seconds
+python run_all.py --live     # also re-run LLM classification with `claude -p` (hours)
+```
+Without `--live`, LLM predictions are read from `results/` and `data/classified_corpus.csv`, because an LLM run is slow, costs money and is not bit-for-bit repeatable. The hand-labelled gold set is never regenerated. The run ends by checking the sealed answer key's sha256.
+
+## Results at a glance
+| System (100 held-out gold reports, run once) | Category accuracy |
+|---|---|
+| **LLM classifier** (`prompts/classify_v1.md`, claude-opus-4-7) | **96.0%** |
+| Keyword rules | 94.0% |
+| TF-IDF + logistic regression | 78.0% |
+
+| Week 3 finding | Evidence |
+|---|---|
+| Cold weather raises battery incidents | 1.8× the rate below 0 °C (95% CI 1.32–2.45) |
+| Fari response-delay complaints after the 1 April update | 5.0× per active hour (95% CI 2.8–9.1); latency 1.75 s → 3.04 s |
+| Motor current rises before sensor faults | cross-validated AUC 0.996 |
+| Site_C North navigation hotspot | highest rate (2.1×) but not significant after correction (q = 0.33) |
+| Sealed answer key | 3 of 4 planted patterns found, 1 partial (limited by sample size) |
+
+## Known limitations
+- All reports, exposure hours and telemetry are synthetic; results show what the method can detect, not real fleet behaviour.
+- Gold labels come from one labeller; kappa 1.0 was a same-day re-label and overstates reliability.
+- Predicted severity is weak (47% exact vs hand labels); the generator drew severity independently of the text.
+- About 63 Rover reports per patrol zone is too few to confirm zone-level hotspots.
+- Public review snippets were not collected.
+
+## Configuration
+| Setting | Where | Default |
+|---|---|---|
+| Corpus size, seed | `src/generate_corpus.py --n --seed` | 2000, 42 |
+| Exposure / normal telemetry seed | `src/generate_exposure.py --seed` | 2026 |
+| Gold-set sample seed | `src/sample_gold_set.py --seed` (do not rerun: overwrites hand labels) | 7 |
+| Prompt version | `prompts/<name>.md`, `--prompt` | `classify_v1` |
+| LLM backend, model | `src/classify_llm.py --backend api\|claude-cli --model` | `api` (all reported runs used `claude-cli`), Opus |
+| API key | `ANTHROPIC_API_KEY` environment variable, `--backend api` only; never committed | — |
+| Hotspot neighbour distance | `BAND_M` in `src/w03_hotspots.py` | 500 m |
+| Human-review accuracy floor | `src/make_eval_report.py --review-floor` | 0.8 |
+
 ## Week 1: Data Landscape, Incident Taxonomy, Corpus & Gold Set
 
 | Deliverable | Status |
@@ -13,7 +57,7 @@ Applied AI Analyst Internship, inGen Dynamics (Futurenauts Internship Program). 
 | [`W01_Taxonomy_Guide.docx`](W01_Taxonomy_Guide.docx): 14 incident categories in 4 groups + NO_INCIDENT, decision rules, examples, borderline rulings, severity scale (1–4), root-cause flag, benchmark notes | Done (v1) |
 | [`weekly/Wk-01-Log.md`](weekly/Wk-01-Log.md): the hardest category boundary (AI Detection Error vs Sensors) | Done |
 | [`data/`](data/): 2,000 synthetic Aido Rover and Fari reports with telemetry and four planted patterns; sealed answer key ([generator](src/generate_corpus.py)) | Done (public review sample to add) |
-| [`eval/gold_set.csv`](eval/gold_set.csv): 250 reports (150 tuning / 100 held-out, 50 double-labelled), sampled by [`src/sample_gold_set.py`](src/sample_gold_set.py) | Sampled, hand-labelling in progress |
+| [`eval/gold_set.csv`](eval/gold_set.csv): 250 reports (150 tuning / 100 held-out, 50 double-labelled), sampled by [`src/sample_gold_set.py`](src/sample_gold_set.py) | Done: 250/250 hand-labelled, 50 double-labelled |
 
 ### Key taxonomy decisions
 1. Classify by **where the robot failed**, not by the trigger; the trigger is recorded in the root-cause flag.
@@ -74,14 +118,16 @@ python src/make_findings_report.py
 
 ## Repository structure
 ```
-├── W01_Data_Landscape.docx
-├── W01_Taxonomy_Guide.docx
-├── src/         # corpus generator, gold-set sampler, classifier, baselines, evaluation
-├── prompts/     # versioned classification prompts
-├── results/     # predictions, run logs, error files
-├── data/        # synthetic corpus; sealed/ holds the answer key (Week 3)
-├── eval/        # gold evaluation set
-└── weekly/      # weekly logs
+├── run_all.py              # one command: rebuild data, evaluation, analysis, reports
+├── requirements.txt
+├── W01_*.docx, W02_*.docx, W03_*.docx, W04_*   # weekly deliverables
+├── src/       # generators, classifier, baselines, evaluation, Week 3 analysis, report builders
+├── prompts/   # versioned classification prompts + CHANGELOG
+├── data/      # synthetic corpus, exposure, normal telemetry; sealed/ holds the answer key
+├── eval/      # hand-labelled gold set and the offline labelling tool
+├── results/   # predictions, run logs, error files; w03/ holds analysis outputs
+├── figures/, maps/          # charts and the hotspot map
+└── weekly/    # weekly logs
 ```
 
 All data in this repository is synthetic. No personal data is included.
