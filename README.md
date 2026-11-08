@@ -107,6 +107,15 @@ python src/evaluate.py results/llm_classify_v1_gold_set_tuning.csv --split tunin
 | [`W03_Findings_Report.docx`](W03_Findings_Report.docx): 8 findings with evidence, confidence, caveats and actions | Done |
 | [`weekly/Wk-03-Log.md`](weekly/Wk-03-Log.md) | Done |
 
+## Week 4: Governance, Packaging & Delivery
+
+| Deliverable | Status |
+|---|---|
+| `run_all.py` + `requirements.txt`: one-command rebuild (tag `v1.0`) | Done |
+| [`W04_Governance_Pack.docx`](W04_Governance_Pack.docx): data dictionary (checked against the files), processing rules, taxonomy change process, monthly re-evaluation, maintenance guide ([builder](src/make_governance_pack.py)) | Done |
+| `W04_Findings_Deck.pdf`: 8 slides | In progress |
+| `W04_Retrospective.docx`: 1 page | To do |
+
 **Week 3 run order:**
 ```bash
 pip install geopandas esda libpysal statsmodels

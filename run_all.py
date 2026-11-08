@@ -37,7 +37,8 @@ EVALUATE = [["src/evaluate.py", "--agreement"],
             ["src/evaluate.py", "results/baseline_tfidf_heldout.csv", "--split", "heldout"],
             ["src/make_eval_report.py", "--prompt", PROMPT]]
 ANALYSIS = [["src/w03_trends.py"], ["src/w03_hotspots.py"], ["src/w03_telemetry.py"],
-            ["src/w03_answer_key.py"], ["src/make_findings_report.py"]]
+            ["src/w03_answer_key.py"], ["src/make_findings_report.py"],
+            ["src/make_governance_pack.py"]]
 
 
 def run(step):
