@@ -33,7 +33,7 @@ pres.title = "inGen Field Intelligence: Findings";
 const C = pres.SchemeColor;
 
 const titleOpts = (color) => ({ x: 0.5, y: 0.35, w: 9.0, h: 0.95, fontSize: 26, bold: true,
-                                color, valign: "top", fontFace: THEME.headFontFace });
+                                color, valign: "top", align: "left", fontFace: THEME.headFontFace });
 pres.defineSlideMaster({
   title: "DARK", background: { color: C_HEX.dk1 },
   objects: [{ placeholder: { options: { name: "title", type: "title", ...titleOpts(C.background1) },
@@ -105,16 +105,20 @@ s.addNotes("The key discipline: the held-out set was used once, for the final nu
 // 3. Accuracy --------------------------------------------------------------
 s = pres.addSlide({ masterName: "LIGHT" });
 s.addText("The LLM classifier is 96% accurate on unseen reports, ahead of both baselines", { placeholder: "title" });
-s.addChart(pres.charts.BAR, [{ name: "Accuracy", labels: ["LLM classifier", "Keyword rules", "TF-IDF + logistic"],
-                               values: [96.0, 94.0, 78.0] }], {
-  x: 0.5, y: 1.45, w: 5.2, h: 3.4, barDir: "bar", chartColors: [C_HEX.accent2],
-  showValue: true, dataLabelPosition: "outEnd", dataLabelFormatCode: '0.0"%"', dataLabelFontSize: 12,
-  dataLabelColor: C_HEX.dk1, dataLabelFontFace: "+mn-lt",
-  catAxisLabelColor: C_HEX.dk2, catAxisLabelFontSize: 12, catAxisLabelFontFace: "+mn-lt",
-  catAxisOrientation: "maxMin", valAxisHidden: true, valAxisMinVal: 0, valAxisMaxVal: 100,
-  valGridLine: { style: "none" }, catGridLine: { style: "none" }, showLegend: false,
-  showTitle: true, title: "Category accuracy, 100 held-out reports", titleFontSize: 12,
-  titleColor: C_HEX.dk2, titleFontFace: "+mn-lt", objectName: "accuracy-chart" });
+// bars drawn as shapes so the PDF renders the same in PowerPoint and Keynote
+s.addText("Category accuracy, 100 held-out reports", { x: 0.5, y: 1.5, w: 5.2, h: 0.35, fontSize: 12,
+  color: C.text2, margin: 0, isTextBox: true, objectName: "accuracy-title" });
+[["LLM classifier", 96.0, C.accent2], ["Keyword rules", 94.0, C.accent6],
+ ["TF-IDF + logistic", 78.0, C.accent6]].forEach(([label, v, color], i) => {
+  const y = 2.05 + i * 0.85, w = 3.2 * v / 100;
+  s.addText(label, { x: 0.5, y, w: 1.5, h: 0.5, fontSize: 12, color: C.text1, valign: "middle",
+                     margin: 0, isTextBox: true, objectName: `bar${i}-label` });
+  s.addShape(pres.shapes.RECTANGLE, { x: 2.05, y: y + 0.08, w, h: 0.34, fill: { color },
+                                      line: { color }, objectName: `bar${i}` });
+  s.addText(`${v.toFixed(1)}%`, { x: 2.15 + w, y, w: 0.8, h: 0.5, fontSize: 13, bold: true,
+                                  color: C.text1, valign: "middle", margin: 0, isTextBox: true,
+                                  objectName: `bar${i}-value` });
+});
 s.addText([
   { text: "Human review: ", options: { bold: true } },
   { text: "every confidence band met the 80% floor; only 1.6% of outputs are low-confidence.",
