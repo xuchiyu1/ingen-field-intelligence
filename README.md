@@ -114,7 +114,7 @@ python src/evaluate.py results/llm_classify_v1_gold_set_tuning.csv --split tunin
 | `run_all.py` + `requirements.txt`: one-command rebuild (tag `v1.0`) | Done |
 | [`W04_Governance_Pack.docx`](W04_Governance_Pack.docx): data dictionary (checked against the files), processing rules, taxonomy change process, monthly re-evaluation, maintenance guide ([builder](src/make_governance_pack.py)) | Done |
 | [`W04_Findings_Deck.pptx`](W04_Findings_Deck.pptx) + PDF: 8 slides, every title a finding, numbers read from the results ([builder](src/make_deck.js)) | Draft |
-| `W04_Retrospective.docx`: 1 page | To do |
+| [`W04_Retrospective.docx`](W04_Retrospective.docx): 1 page | Done |
 
 **Week 3 run order:**
 ```bash
